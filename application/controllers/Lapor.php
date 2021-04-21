@@ -13,6 +13,7 @@ class Lapor extends CI_Controller(){
 	public function index()
 	{
 		$this->load->view('templates/header');
+		$this->load->view('templates/hero_section');
 		$this->load->view('pages/lapor');
 		$this->load->view('templates/footer');
 	}
