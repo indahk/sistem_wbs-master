@@ -833,7 +833,8 @@ section {
 }
 
 .skills .progress-bar-wrap {
-  background: #e8edf5;
+  background: #848484;
+  ;
 }
 
 .skills .progress-bar {
@@ -1713,7 +1714,7 @@ section {
 
 #footer .footer-top {
   padding: 60px 0 30px 0;
-  background: #fff;
+  background: linear-gradient(rgba(40, 58, 90, 0.9), rgba(40, 58, 90, 0.9)), url("../img/cta-bg.jpg") fixed center center;;
 }
 
 #footer .footer-top .footer-contact {
