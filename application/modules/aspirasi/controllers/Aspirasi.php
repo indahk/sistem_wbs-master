@@ -18,6 +18,7 @@ class Aspirasi extends MX_Controller{
 	//	$this->load->view('templates/footer');
 	//  echo 'Hai ini adalah halaman aspirasi';
 	$this->load->view('template/header');
+	$this->load->view('hero_section');
 	$this->load->view('form_aspirasi');
 	$this->load->view('template/footer');
 
@@ -33,8 +34,8 @@ class Aspirasi extends MX_Controller{
     public function deleteAspirasi(){
 		$this->Md_aspirasi->deleteAspirasi();
 
-		$id = $this->input->post('id_aspirasi');
-        $where = array('id_aspirasi' => $id);
+		$id             = $this->input->post('id_aspirasi');
+        $where    = array('id_aspirasi' => $id);
         $this->Md_aspirasi->deleteAspirasi($where, 'tb_aspirasi', $id);
         $this->session->set_flashdata('message', '<div class="alert alert-danger">Data Berhasil Dihapus!</div>');
         redirect('/Aspirasi/showAspirasi');
