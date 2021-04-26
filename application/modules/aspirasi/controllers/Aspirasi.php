@@ -16,7 +16,8 @@ class Aspirasi extends MX_Controller{
 	//	$this->load->view('templates/hero_section');
 	//	$this->load->view('pages/aspirasi');
 	//	$this->load->view('templates/footer');
-        echo 'Hai ini adalah halaman aspirasi';
+	//  echo 'Hai ini adalah halaman aspirasi';
+	$this->load->view('aspirasi');
         
 	}
 

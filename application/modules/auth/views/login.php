@@ -13,12 +13,11 @@
 
     <!-- Custom fonts for this template-->
     <link href="assets/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="assets/admin/ss/sb-admin-2.min.css" rel="stylesheet">
+    <link href="assets/admin/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -72,10 +71,10 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                        <a class="small" href="<?= base_url('auth/forgot') ?>">Forgot Password?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="register.html">Create an Account!</a>
+                                        <a class="small" href="<?= base_url('auth/register') ?>">Create an Account!</a>
                                     </div>
                                 </div>
                             </div>
