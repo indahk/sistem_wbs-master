@@ -17,7 +17,7 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="<?= base_url('assets/admin/css/sb-admin-2.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/admin/css/sb-admin-2.css') ?>" rel="stylesheet">
 
 </head>
 
@@ -58,7 +58,7 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="<?= base_url('') ?>index.html" class="btn btn-primary btn-user btn-block">
+                                        <a href="<?= base_url('dashboard/DashboardController') ?>" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </a>
                                         <hr>
