@@ -68,7 +68,7 @@
           <li><a href="<?php base_url('Permohonan')?>">Permohonan Informasi</a></li>
           <li class="drop-down"><a href="">Layanan</a>
             <ul>
-              <li><a href="#">Login</a></li>
+              <li><a href="<?= base_url('auth/Auth') ?>">Login</a></li>
 <!--              <li class="drop-down"><a href="#">Deep Drop Down</a>
                 <ul>
                   <li><a href="#">Deep Drop Down 1</a></li>

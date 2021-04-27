@@ -8,13 +8,13 @@ class Auth extends MX_Controller{
         parent::__construct();
         $this->load->library('session');
         $this->load->library('form_validation');
-       // $this->load->model('account');
+        $this->load->model('Md_akun');
     }
 
     public function index()
     {
 
-        $this->load->view('register'); 
+        $this->load->view('auth/login'); 
 
 
         //modules::run('auth/viwes/login');  
