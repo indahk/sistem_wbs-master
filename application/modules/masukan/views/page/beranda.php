@@ -153,7 +153,7 @@ End Why Us Section --> -->
 
         <div class                              = "row">
             <div class                          = "col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
-                <img src                        = "assets/img/skills.png" class="img-fluid" alt="">
+                <img src                        = "<?= base_url('assets/img/skills.png')?>" class="img-fluid" alt="">
             </div>
             <div class                          = "col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
                 <h3>Jumlah Laporan yang masuk</h3>
