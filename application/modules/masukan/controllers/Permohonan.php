@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Aspirasi extends MX_Controller{
+class Permohonan extends MX_Controller{
  
 	function __construct() 
 	{
 		parent::__construct();
-		$this->load->helpers('url');
-		$this->load->model('Md_Aspirasi');
+		$this->load->helper('url');
+		$this->load->model('Md_permohonan');
 	}
 
 	public function index()
@@ -19,36 +19,36 @@ class Aspirasi extends MX_Controller{
 	//  echo 'Hai ini adalah halaman aspirasi';
 	$this->load->view('template/header');
 	$this->load->view('hero_section');
-	$this->load->view('form_aspirasi');
+	$this->load->view('form_permohonan');
 	$this->load->view('template/footer');
 
         
 	}
 
-	public function addAspirasi(){
-		$this->Md_aspirasi->addAspirasi();
+	public function addPermohonan(){
+		$this->Md_permohonan->addPermohonan();
         $this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil Ditambahkan!</div>');
-        redirect('/Aspirasi/showAspirasi');
+        redirect('/Permohonan/showPermohonan');
 	}
 
-    public function deleteAspirasi(){
-		$this->Md_aspirasi->deleteAspirasi();
+    public function deletePermohonan(){
+		$this->Md_permohonan->deletePermohonan();
 
-		$id             = $this->input->post('id_aspirasi');
-        $where    = array('id_aspirasi' => $id);
-        $this->Md_aspirasi->deleteAspirasi($where, 'tb_aspirasi', $id);
+		$id             = $this->input->post('id_permohonan');
+        $where    = array('id_permohonan' => $id);
+        $this->Md_permohonan->deletePermohonan($where, 'tb_permohonan', $id);
         $this->session->set_flashdata('message', '<div class="alert alert-danger">Data Berhasil Dihapus!</div>');
-        redirect('/Aspirasi/showAspirasi');
+        redirect('/Permohonan/showPermohonan');
     }
 
 
 
-    public function showAspirasi(){
-		$this->Md_aspirasi->allAspirasi();
+    public function showPermohonan(){
+		$this->Md_permohonan->alPermohonan();
 
     }
 
-    public function getAspirasi(){
+    public function getPermohonan(){
         
     }
 

@@ -61,8 +61,8 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="<?= base_url('Home') ?>">Beranda</a></li>
-          <li><a href="<?= base_url('Aspirasi') ?>">Aspirasi</a></li>
+          <li class="active"><a href="<?= base_url('page/beranda') ?>">Beranda</a></li>
+          <li><a href="<?= base_url('Aspirasi')?>">Aspirasi</a></li>
           <li><a href="<?php base_url('Saran')?>">Saran</a></li>
           <li><a href="<?php base_url('Lapor')?>">Lapor Pelanggaran</a></li>
           <li><a href="<?php base_url('Permohonan')?>">Permohonan Informasi</a></li>
