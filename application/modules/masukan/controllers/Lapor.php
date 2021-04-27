@@ -12,15 +12,15 @@ class Lapor extends MX_Controller{
 
 	public function index()
 	{   
-	//	$this->load->view('templates/header');
-	//	$this->load->view('templates/hero_section');
-	//	$this->load->view('pages/aspirasi');
-	//	$this->load->view('templates/footer');
-	//  echo 'Hai ini adalah halaman aspirasi';
-	$this->load->view('template/header');
-	$this->load->view('hero_section');
-	$this->load->view('form_lapor');
-	$this->load->view('template/footer');
+        //	$this->load->view('templates/header');
+        //	$this->load->view('templates/hero_section');
+        //	$this->load->view('pages/aspirasi');
+        //	$this->load->view('templates/footer');
+        //  echo 'Hai ini adalah halaman aspirasi';
+        $this->load->view('template/header');
+        $this->load->view('hero_section');
+        $this->load->view('form/form_lapor');
+        $this->load->view('template/footer');
 
         
 	}

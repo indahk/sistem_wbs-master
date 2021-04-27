@@ -7,20 +7,20 @@ class Aspirasi extends MX_Controller{
 	{
 		parent::__construct();
 		$this->load->helper('url');
-		$this->load->model('Md_Aspirasi');
+		$this->load->model('Md_aspirasi');
 	}
 
 	public function index()
 	{   
-	//	$this->load->view('templates/header');
-	//	$this->load->view('templates/hero_section');
-	//	$this->load->view('pages/aspirasi');
-	//	$this->load->view('templates/footer');
-	//  echo 'Hai ini adalah halaman aspirasi';
-	$this->load->view('template/header');
-	$this->load->view('hero_section');
-	$this->load->view('form/form_aspirasi');
-	$this->load->view('template/footer');
+		//	$this->load->view('templates/header');
+		//	$this->load->view('templates/hero_section');
+		//	$this->load->view('pages/aspirasi');
+		//	$this->load->view('templates/footer');
+		//  echo 'Hai ini adalah halaman aspirasi';
+		$this->load->view('template/header');
+		$this->load->view('hero_section');
+		$this->load->view('form/form_aspirasi');
+		$this->load->view('template/footer');
 
         
 	}

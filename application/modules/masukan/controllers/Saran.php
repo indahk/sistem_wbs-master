@@ -19,7 +19,7 @@ class Saran extends MX_Controller{
 	//  echo 'Hai ini adalah halaman aspirasi';
 	$this->load->view('template/header');
 	$this->load->view('hero_section');
-	$this->load->view('form_saran');
+	$this->load->view('form/form_saran');
 	$this->load->view('template/footer');
 
         
