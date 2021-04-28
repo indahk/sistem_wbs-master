@@ -208,7 +208,7 @@ End Why Us Section --> -->
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Aspirasi</h2>
+          <h2>Layanan</h2>
           <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
@@ -615,9 +615,7 @@ End Team Section -->
 
 
 
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-                in iste officiis commodi quidem hic quas.</p>
+            <p>Form Aspirasi</p>
         </div>
 
         <div class                              = "col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch">

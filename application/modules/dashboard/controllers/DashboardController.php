@@ -13,9 +13,11 @@ class DashboardController extends MX_Controller{
 
     public function index()
     {
-
-        $this->load->view('dashbord/Dasboard'); 
-
+        //$this->load->view('template/admin_header');
+        $this->load->view('dashboard/template/admin_head');
+        $this->load->view('dashboard/template/admin_header');
+        $this->load->view('dashboard/dashboard'); 
+        $this->load->view('dashboard/template/admin_footer');
 
         //modules::run('auth/viwes/login');  
         

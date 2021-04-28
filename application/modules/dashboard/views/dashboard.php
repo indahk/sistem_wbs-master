@@ -1,11 +1,12 @@
 
+
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="<?= base_url('') ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                        <a href="<?= base_url('#') ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
 
@@ -19,8 +20,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Earnings (Monthly)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                                Aspirasi (Perbulan)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">50</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -37,8 +38,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Earnings (Annual)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                                Saran (perbulan)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">56</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -54,11 +55,11 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Pelaporan Pelanggaran
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">20</div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="progress progress-sm mr-2">
@@ -84,7 +85,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Pending Requests</div>
+                                                Permohonan Informasi</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                                         </div>
                                         <div class="col-auto">
@@ -108,17 +109,17 @@
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
                                     <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="<?= base_url('') ?>" role="button" id="dropdownMenuLink"
+                                        <a class="dropdown-toggle" href="<?= base_url('#') ?>" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                             aria-labelledby="dropdownMenuLink">
                                             <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="<?= base_url('') ?>">Action</a>
-                                            <a class="dropdown-item" href="<?= base_url('') ?>">Another action</a>
+                                            <a class="dropdown-item" href="<?= base_url('#') ?>">Action</a>
+                                            <a class="dropdown-item" href="<?= base_url('#') ?>">Another action</a>
                                             <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="<?= base_url('') ?>#">Something else here</a>
+                                            <a class="dropdown-item" href="<?= base_url('#') ?>">Something else here</a>
                                         </div>
                                     </div>
                                 </div>
@@ -139,7 +140,7 @@
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
                                     <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="<?= base_url('') ?>" role="button" id="dropdownMenuLink"
+                                        <a class="dropdown-toggle" href="<?= base_url('#') ?>" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                         </a>
@@ -299,13 +300,13 @@
                                 <div class="card-body">
                                     <div class="text-center">
                                         <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                            src="<?= base_url('img/undraw_posting_photo.svg') ?>" alt="">
+                                            src="img/undraw_posting_photo.svg" alt="">
                                     </div>
                                     <p>Add some quality, svg illustrations to your project courtesy of <a
-                                            target="_blank" rel="nofollow" href="<?= base_url('') ?>">unDraw</a>, a
+                                            target="_blank" rel="nofollow" href="<?= base_url('https://undraw.co/') ?>">unDraw</a>, a
                                         constantly updated collection of beautiful svg images that you can use
                                         completely free and without attribution!</p>
-                                    <a target="_blank" rel="nofollow" href="<?= base_url('https://undraw.co/') ?>">Browse Illustrations on
+                                    <a target="_blank" rel="nofollow" href="<?= base_url('https://undraw.co/') ?> ">Browse Illustrations on
                                         unDraw &rarr;</a>
                                 </div>
                             </div>
