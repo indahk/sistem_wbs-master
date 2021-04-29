@@ -1,7 +1,7 @@
 <?php 
 (defined('BASEPATH')) OR exit('No direct script access allowed');
 
-class DashboardController extends MX_Controller{
+class DashboardController1 extends MX_Controller{
 
     public function __construct()
     {
@@ -14,10 +14,12 @@ class DashboardController extends MX_Controller{
     public function index()
     {
         //$this->load->view('template/admin_header');
-        $this->load->view('dashboard/template/admin_head');
-        $this->load->view('dashboard/template/admin_header');
-        $this->load->view('dashboard/dashboard'); 
-        $this->load->view('dashboard/template/admin_footer');
+        //$this->load->view('dashboard/template/admin_head');
+       // $this->load->view('dashboard1/template/head');
+        //$data['menu'] = $this->load->view('dashboard1/template/head', NULL, TRUE);
+       // $this->load->view('dashboard1/template/navbar');
+        $this->load->view('dashboard1/dashboard'); 
+        //$this->load->view('dashboard/template/admin_footer');
 
         //modules::run('auth/viwes/login');  
         
@@ -30,14 +32,14 @@ class DashboardController extends MX_Controller{
     
     }
 
-    public function register()
+    public function dataAspirasi()
     {
         //echo "Alhamdullillah Bisa";
-        $this->load->view('register');
+        $this->load->view('dashboard1/pages/dataAspirasi');
     }
 
     public function forgot(){
-        $this->load->view("forgot-password");
+        //$this->load->view("forgot-password");
     }
         
     
