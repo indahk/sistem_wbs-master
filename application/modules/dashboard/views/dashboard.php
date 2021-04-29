@@ -107,7 +107,7 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Jumlah Masukan yng masuk</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="<?= base_url('#') ?>" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -138,7 +138,7 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Status masukan</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="<?= base_url('#') ?>" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -146,11 +146,14 @@
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                             aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="<?= base_url('#') ?>">Action</a>
-                                            <a class="dropdown-item" href="<?= base_url('#') ?>">Another action</a>
-                                            <div class="dropdown-divider"></div>
+                                            <div class="dropdown-header">Kriteria</div>
+                                            <a class="dropdown-item" href="<?= base_url('#') ?>">Aspirasi </a>
+                                            <a class="dropdown-item" href="<?= base_url('#') ?>">Saran</a>
+                                            <a class="dropdown-item" href="<?= base_url('#') ?>">Pelaporan Pelanggaran</a>
+                                            <a class="dropdown-item" href="<?= base_url('#') ?>">Permintaan Informasi</a>
+   <!--                                         <div class="dropdown-divider"></div>
                                             <a class="dropdown-item" href="<?= base_url('#') ?>">Something else here</a>
+                                            -->
                                         </div>
                                     </div>
                                 </div>
@@ -161,13 +164,13 @@
                                     </div>
                                     <div class="mt-4 text-center small">
                                         <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Direct
+                                            <i class="fas fa-circle text-primary"></i> Belum Proses
                                         </span>
                                         <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> Social
+                                            <i class="fas fa-circle text-success"></i> Proses
                                         </span>
                                         <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Referral
+                                            <i class="fas fa-circle text-info"></i> Selesai
                                         </span>
                                     </div>
                                 </div>
