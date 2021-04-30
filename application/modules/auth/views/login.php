@@ -1,68 +1,127 @@
-<!doctype html>
-<html lang="en">
-  <head>
-  	<title>Login 10</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Login V5</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->	
+        <link rel="icon" type="image/png" href="<?= base_url('assets/colorlibLogin/images/icons/favicon.ico')?>"/>
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="<?= base_url('assets/colorlibLogin/vendor/bootstrap/css/bootstrap.min.css')?>">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="<?= base_url('assets/colorlibLogin/fonts/font-awesome-4.7.0/css/font-awesome.min.css')?>">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="<?= base_url('assets/colorlibLogin/fonts/Linearicons-Free-v1.0.0/icon-font.min.css')?>">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="<?= base_url('assets/colorlibLogin/vendor/animate/animate.css')?>">
+    <!--===============================================================================================-->	
+        <link rel="stylesheet" type="text/css" href="<?= base_url('assets/colorlibLogin/vendor/css-hamburgers/hamburgers.min.css')?>">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="<?= base_url('assets/colorlibLogin/vendor/animsition/css/animsition.min.css')?>">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="<?= base_url('assets/colorlibLogin/vendor/select2/select2.min.css')?>">
+    <!--===============================================================================================-->	
+        <link rel="stylesheet" type="text/css" href="<?= base_url('assets/colorlibLogin/vendor/daterangepicker/daterangepicker.css')?>">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="<?= base_url('assets/colorlibLogin/css/util.css')?>">
+        <link rel="stylesheet" type="text/css" href="<?= base_url('assets/colorlibLogin/css/main.css')?>">
+    <!--===============================================================================================-->
+    </head>
+    <body>
+        
+        <div class="limiter">
+        
+                  
+            <div class="container-login100" style="background-image: url(<?= base_url('assets/colorlibLogin/images/bg_login_pcr2.jpg') ?>);">
+              
+                <div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
+                    <form action="dashboard1/DashboardController1" class="login100-form validate-form flex-sb flex-w" method="POST">
+                        <span class="login100-form-title p-b-53">
+                            Sistem WBS
+                            <h2></h2>
+                            <img class="kiri" src="<?= base_url('assets/colorlibLogin/images/small_logo_pcr.png') ?>" >
+                
+                        </span>
+                       
 
-	<link href="<?= base_url('https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap') ?>" rel="stylesheet">
+                      
 
-	<link rel="stylesheet" href="<?= base_url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css') ?>">
-	
-	<link rel="stylesheet" href="<?= base_url('assets/colorlibLogin/css/style.css') ?>">
+                        <!-- <a href="#" class="btn-google m-b-20">
+                            <img src="<?= base_url('assets/colorlibLogin/images/icons/icon-google.png') ?>" alt="GOOGLE">
+                            Google
+                        </a> -->
+                        
+                        <div class="p-t-31 p-b-9"> 
+                            <span class="txt1">
+                                Username
+                            </span>
+                        </div>
+                        <div class="wrap-input100 validate-input" data-validate = "Username is required">
+                            <input class="input100" type="text" name="username" >
+                            <span class="focus-input100"></span>
+                        </div>
+                        
+                        <div class="p-t-13 p-b-9">
+                            <span class="txt1">
+                                Password
+                            </span>
 
-	</head>
-	<body class="img js-fullheight" style="background-image: url(<?= base_url('assets/colorlibLogin/images/bg_login_pcr2.jpg') ?>);">
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Selamat Datang </h2>
-				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-md-6 col-lg-4">
-					<div class="login-wrap p-0">
-		      	<h3 class="mb-4 text-center">Have an account?</h3>
-		      	<form action="#" class="signin-form">
-		      		<div class="form-group">
-		      			<input type="text" class="form-control" placeholder="Username" required>
-		      		</div>
-	            <div class="form-group">
-	              <input id="password-field" type="password" class="form-control" placeholder="Password" required>
-	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-	            </div>
-	            <div class="form-group">
-	            	<button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
-	            </div>
-	            <div class="form-group d-md-flex">
-	            	<div class="w-50">
-		            	<label class="checkbox-wrap checkbox-primary">Remember Me
-									  <input type="checkbox" checked>
-									  <span class="checkmark"></span>
-									</label>
-								</div>
-								<div class="w-50 text-md-right">
-									<a href="<?= base_url('') ?>#" style="color: #fff">Forgot Password</a>
-								</div>
-	            </div>
-	          </form>
-	          <p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
-	          <div class="social d-flex text-center">
-	          	<a href="<?= base_url('#') ?>" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span> Facebook</a>
-	          	<a href="<?= base_url('#') ?>" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Twitter</a>
-	          </div>
-		      </div>
-				</div>
-			</div>
-		</div>
-	</section>
+                            <!-- <a href="#" class="txt2 bo1 m-l-5">
+                                Forgot?
+                            </a> -->
+                        </div>
+                        <div class="wrap-input100 validate-input" data-validate = "Password is required">
+                            <input class="input100" type="password" name="pass" >
+                            <span class="focus-input100"></span>
+                        </div>
 
-	<script src="<? base_url('assets/colorlibLogin/js/jquery.min.js') ?>"></script>
-  <script src="<? base_url('assets/colorlibLogin/js/popper.js') ?>"></script>
-  <script src="<? base_url('assets/colorlibLogin/js/bootstrap.min.js') ?>"></script>
-  <script src="<? base_url('assets/colorlibLogin/js/main.js') ?>"></script>
+                        <div class="container-login100-form-btn m-t-17">
+                            <button class="login100-form-btn">
+                                Login
+                            </button>
+                        </div>
 
-	</body>
-</html>
+                        <div class="container-login100-form-btn m-t-17">
+                            <button class="login100-form-btn">
+                            <img src="<?= base_url('assets/colorlibLogin/images/icons/icon-google.png') ?>">
+                            </button>
+                        </div>
+                        
+                       
 
+                        <div class="w-full text-center p-t-55">
+                            <span class="txt2">
+                                Not a member?
+                            </span>
+
+                            <a href="#" class="txt2 bo1">
+                                Sign up now
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+
+        <div id="dropDownSelect1"></div>
+        
+    <!--===============================================================================================-->
+        <script src="<?= base_url('assets/colorlibLogin/vendor/jquery/jquery-3.2.1.min.js') ?>"></script>
+    <!--===============================================================================================-->
+        <script src="<?= base_url('assets/colorlibLogin/vendor/animsition/js/animsition.min.js') ?>"></script>
+    <!--===============================================================================================-->
+        <script src="<?= base_url('assets/colorlibLogin/vendor/bootstrap/js/popper.js') ?>X"></script>
+        <script src="<?= base_url('assets/colorlibLogin/vendor/bootstrap/js/bootstrap.min.js') ?>"></script>
+    <!--===============================================================================================-->
+        <script src="<?= base_url('assets/colorlibLogin/vendor/select2/select2.min.js') ?>"></script>
+    <!--===============================================================================================-->
+        <script src="<?= base_url('assets/colorlibLogin/vendor/daterangepicker/moment.min.js') ?>"></script>
+        <script src="<?= base_url('assets/colorlibLogin/vendor/daterangepicker/daterangepicker.js') ?>"></script>
+    <!--===============================================================================================-->
+        <script src="<?= base_url('assets/colorlibLogin/vendor/countdowntime/countdowntime.js') ?>"></script>
+    <!--===============================================================================================-->
+        <script src="<?= base_url('assets/colorlibLogin/js/main.js') ?>"></script>
+
+    </body>
+    </html>
