@@ -6,8 +6,8 @@
         <div class                              = "container">
             <div class                          = "row justify-content-center">
                 <div class                      = "col-lg-6">
-                    <h4>Cari Aspirasi</h4>
-                    <p></p>
+                    <h4>Cari Masukan</h4>
+                    <p>Lihat Status terakhir dari Aspirasi, Saran, Lapor Pelanggaran, Permintaan Informasi yang anda kirim</p>
                     <form action                = "" method="post">
                         <input type             = "email" name="email" placeholder="Masukkan NO Tiket"><input type="submit" value="Lacak">
                     </form>

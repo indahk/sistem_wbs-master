@@ -14,7 +14,7 @@
           <img src="<?= base_url('assets/dashboard/dist/img/user2-160x160.jpg') ?>" class="img-circle elevation-2" alt="User Image">
         </div> -->
         <div class="info">
-          <a href="<?= base_url('') ?>#" class="d-block">Alexander Pierce</a>
+          <a href="<?= base_url('') ?>#" class="d-block">Admin</a>
         </div>
       </div>
 

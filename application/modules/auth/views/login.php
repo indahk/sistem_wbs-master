@@ -1,103 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-
+  <head>
+  	<title>Login 10</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+	<link href="<?= base_url('https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap') ?>" rel="stylesheet">
 
-    <!-- Custom fonts for this template-->
-    <link href="<?= base_url('assets/admin/vendor/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+	<link rel="stylesheet" href="<?= base_url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css') ?>">
+	
+	<link rel="stylesheet" href="<?= base_url('assets/colorlibLogin/css/style.css') ?>">
 
-    <!-- Custom styles for this template-->
-    <link href="<?= base_url('assets/admin/css/sb-admin-2.css') ?>" rel="stylesheet">
+	</head>
+	<body class="img js-fullheight" style="background-image: url(<?= base_url('assets/colorlibLogin/images/bg_login_pcr2.jpg') ?>);">
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Selamat Datang </h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-4">
+					<div class="login-wrap p-0">
+		      	<h3 class="mb-4 text-center">Have an account?</h3>
+		      	<form action="#" class="signin-form">
+		      		<div class="form-group">
+		      			<input type="text" class="form-control" placeholder="Username" required>
+		      		</div>
+	            <div class="form-group">
+	              <input id="password-field" type="password" class="form-control" placeholder="Password" required>
+	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+	            </div>
+	            <div class="form-group">
+	            	<button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
+	            </div>
+	            <div class="form-group d-md-flex">
+	            	<div class="w-50">
+		            	<label class="checkbox-wrap checkbox-primary">Remember Me
+									  <input type="checkbox" checked>
+									  <span class="checkmark"></span>
+									</label>
+								</div>
+								<div class="w-50 text-md-right">
+									<a href="<?= base_url('') ?>#" style="color: #fff">Forgot Password</a>
+								</div>
+	            </div>
+	          </form>
+	          <p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
+	          <div class="social d-flex text-center">
+	          	<a href="<?= base_url('#') ?>" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span> Facebook</a>
+	          	<a href="<?= base_url('#') ?>" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Twitter</a>
+	          </div>
+		      </div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-</head>
+	<script src="<? base_url('assets/colorlibLogin/js/jquery.min.js') ?>"></script>
+  <script src="<? base_url('assets/colorlibLogin/js/popper.js') ?>"></script>
+  <script src="<? base_url('assets/colorlibLogin/js/bootstrap.min.js') ?>"></script>
+  <script src="<? base_url('assets/colorlibLogin/js/main.js') ?>"></script>
 
-<body class="bg-gradient-primary">
-
-    <div class="container">
-    <h1></h1>
-
-        <!-- Outer Row -->
-        <div class="row justify-content-center">
-
-            <div class="col-xl-10 col-lg-12 col-md-9">
-
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <!-- Nested Row within Card Body -->
-                        <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                            <div class="col-lg-6">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Selamat Datang</h1>
-                                    </div>
-                                    <form class="user">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="email" aria-describedby="emailHelp"
-                                                placeholder="Masukkan Username...">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="pwd" placeholder="Password">
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
-                                        </div>
-                                        <a href="<?= base_url('dashboard/DashboardController') ?>" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
-                                        <hr>
-                                        <a href="<?= base_url('') ?>index.html" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
-                                        </a>
-                                        <a href="<?= base_url('') ?>index.html" class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                        </a>
-                                    </form>
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="<?= base_url('auth/forgot') ?>">Forgot Password?</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="<?= base_url('auth/register') ?>">Create an Account!</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="<?= base_url('assets/admin/vendor/jquery/jquery.min.js') ?>"></script>
-    <script src="<?= base_url('assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="<?= base_url('assets/admin/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="<?= base_url('assets/admin/js/sb-admin-2.min.js') ?>"></script>
-
-</body>
-
+	</body>
 </html>
+
