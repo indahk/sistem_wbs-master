@@ -77,23 +77,24 @@
                     <td>A-------</td>
                     <td> 04/08/2020</td>
                     <td> Proses</td>
-                    <td>
-                    <div class="margin">
-                        <div class="btn-group">
-                        <button type="button" class="btn btn-info">Aksi</button>
-                        <button type="button" class="btn btn-info dropdown-toggle dropdown-icon" data-toggle="dropdown">
-                          <span class="sr-only">Toggle Dropdown</span>
-                        </button>
-                          <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" href="#">Detail</a>
-                            <a class="dropdown-item" href="#">Update</a>
-                            <a class="dropdown-item" href="#"></a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
+                    <td>   
+                    <div class="btn-group">
+                    <button type="button" class="btn btn-info">Action</button>
+                    <div class="btn-group">
+                    <button type="button" class="btn btn-info dropdown-toggle dropdown-hover dropdown-icon" data-toggle="dropdown">
+                      <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu" role="menu">
+                      <a class="dropdown-item" href="">Detail</a>
+                      <a class="dropdown-item" href="#">Edit</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                  </div>
+
+                  </div>
+                  </td>
                   </tr>
                  
                   </tbody>
@@ -182,6 +183,10 @@
 
 <!-- jQuery -->
 <script src="<?= base_url('assets/dashboard/plugins/jquery/jquery.min.js')?>"></script>
+
+<!-- <script src="../../plugins/jquery/jquery.min.js"></script> -->
+<!-- Bootstrap 4 -->
+<script src="<?= base_url('assets/dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
 <!-- Bootstrap 4 -->
 <script src="<?= base_url('assets/dashboard/plugins/datatables/jquery.dataTables.min.js')?>"></script>
 <!-- DataTables  & Plugins -->

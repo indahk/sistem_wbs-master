@@ -27,7 +27,7 @@ class Lapor extends MX_Controller{
 
 	public function addLapor(){
 		$this->Md_lapor->addLapor();
-        $this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil Ditambahkan!</div>');
+        $this->session->set_flashdata('message', '<div class="alert alert-success">Pelaporan berhasil dikirimkan!</div>');
         redirect('/Lapor/showLapor');
 	}
 

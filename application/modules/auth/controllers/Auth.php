@@ -38,5 +38,7 @@ class Auth extends MX_Controller{
         $this->load->view("forgot-password");
     }
         
-    
+    public function alih(){
+        $this->load->view("dashboard1/dashboard");
+    }
 }

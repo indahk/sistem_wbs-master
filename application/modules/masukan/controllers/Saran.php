@@ -27,7 +27,7 @@ class Saran extends MX_Controller{
 
 	public function addSaran(){
 		$this->Md_aspirasi->addSaran();
-        $this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil Ditambahkan!</div>');
+        $this->session->set_flashdata('message', '<div class="alert alert-success">Saran Berhasil dikirimkan</div>');
         redirect('/Saran/showSaran');
 	}
 
@@ -44,7 +44,7 @@ class Saran extends MX_Controller{
 
 
     public function showSaran(){
-		$this->Md_saran->allSaran();
+		$this->load->view('dashboard1/pages/dataSaran');
 
     }
 

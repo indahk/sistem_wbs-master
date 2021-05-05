@@ -35,7 +35,7 @@
             <div class="container-login100" style="background-image: url(<?= base_url('assets/colorlibLogin/images/bg_login_pcr2.jpg') ?>);">
               
                 <div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
-                    <form action="dashboard1/DashboardController1" class="login100-form validate-form flex-sb flex-w" method="POST">
+                    <form action="Auth/alih" class="login100-form validate-form flex-sb flex-w" method="POST">
                         <span class="login100-form-title p-b-53">
                             Sistem WBS
                             <h2></h2>

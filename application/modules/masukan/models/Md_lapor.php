@@ -12,28 +12,27 @@ class Md_lapor extends MX_Controller
     }
     public function allAspirasi()
     {
-        $query = $this->db->query('select * from tb_pelapor'); //mendapatkan seluruh data di tb_aspirasi
-
+        $query = $this->db->query('select * from tb_lapor'); //mendapatkan seluruh data di tb_lappor
         return $query->result(); //mengembalikan nilai berupa array
     }
     public function getAspirasi($id)
     {
         $this->db->distinct();
         $this->db->select("*");
-        $this->db->from("tb_pelapor");
-        $this->db->where("id_pelapor", $id);
+        $this->db->from("tb_lapor");
+        $this->db->where("id_lapor", $id);
         return $data = $this->db->get()->result_array(); //mengembalikan nilai berupa array
     }
     private function do_lampiran()
     {
-        $lampiran = $_FILES['lampiran_pelaporan'];
+        $lampiran = $_FILES['lampiran_lapor'];
         if ($lampiran = null) {
             echo "nill";
         } else {
             $config['upload_path']          = './assets/img/';
             $config['allowed_types']        = 'gif|jpg|png|jpeg';
             $this->upload->initialize($config);
-            if (!$this->upload->do_upload('lampiran_pelaporan')) {
+            if (!$this->upload->do_upload('lampiran_lapo')) {
                 echo "gagal upload";
                 die();
             } else {
@@ -44,7 +43,7 @@ class Md_lapor extends MX_Controller
     }
     private function _deleteLampiran($id)
     {
-        $product = $this->getPelapor($id);
+        $product = $this->getlapor($id);
         $prd = $product[0];
         var_dump($prd);
         if ($prd['foto_pupuk'] != null) {
@@ -52,7 +51,7 @@ class Md_lapor extends MX_Controller
             return array_map('unlink', glob(FCPATH . "assets/img/pupuk/$filename.*"));
         }
     }
-    public function addPelapor()
+    public function addlapor()
     {
         $judul = $this->input->post('pupuk_nama');
         $isi = $this->input->post('pupuk_harga');
@@ -67,13 +66,13 @@ class Md_lapor extends MX_Controller
         );
         $this->db->insert('pupuk', $data);
     }
-    function deletePelapor($where, $table, $id)
+    function deletelapor($where, $table, $id)
     { //method hapus data
         var_dump($this->_deleteImage($id));
         $this->db->where($where); //id data
         $this->db->delete($table); //table apa
     }
-    public function editPelapor()
+    public function editlapor()
     {
         $foto = $_FILES['pupuk_foto'];
         if ($foto['name'] != '') {

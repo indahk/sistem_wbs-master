@@ -12,7 +12,7 @@ class Md_saran extends MX_Controller
     }
     public function allSaran()
     {
-        $query = $this->db->query('select * from tb_aspirasi'); //mendapatkan seluruh data di tb_aspirasi
+        $query = $this->db->query('select * from tb_saran'); //mendapatkan seluruh data di tb_saran
 
         return $query->result(); //mengembalikan nilai berupa array
     }
@@ -20,20 +20,20 @@ class Md_saran extends MX_Controller
     {
         $this->db->distinct();
         $this->db->select("*");
-        $this->db->from("tb_aspirasi");
-        $this->db->where("id_aspirasi", $id);
+        $this->db->from("tb_saran");
+        $this->db->where("id_saran", $id);
         return $data = $this->db->get()->result_array(); //mengembalikan nilai berupa array
     }
     private function do_lampiran()
     {
-        $lampiran = $_FILES['lampiran_aspirasi'];
+        $lampiran = $_FILES['lampiran_saran'];
         if ($lampiran = null) {
             echo "nill";
         } else {
             $config['upload_path']          = './assets/img/pupuk/';
             $config['allowed_types']        = 'pdf|docs';
             $this->upload->initialize($config);
-            if (!$this->upload->do_upload('lampiran_aspirasi')) {
+            if (!$this->upload->do_upload('lampiran_saran')) {
                 echo "gagal upload";
                 die();
             } else {
@@ -44,7 +44,7 @@ class Md_saran extends MX_Controller
     }
     private function _deleteLampiran($id)
     {
-        $product = $this->getAspirasi($id);
+        $product = $this->getsaran($id);
         $prd = $product[0];
         var_dump($prd);
         if ($prd['foto_pupuk'] != null) {
@@ -52,17 +52,17 @@ class Md_saran extends MX_Controller
             return array_map('unlink', glob(FCPATH . "assets/img/pupuk/$filename.*"));
         }
     }
-    public function addAspirasi()
+    public function addsaran()
     {
-        $judul = $this->input->post('judul_aspirasi');
-        $isi = $this->input->post('isi_aspirasi');
+        $judul = $this->input->post('judul_saran');
+        $isi = $this->input->post('isi_saran');
         $lampiran = $this->input->post('lampiran');
         $data = array(
-            'judul_aspirasi' => $judul,
-            'isi_aspirasi' => $isi,
-            'lampiran_aspirasi' => $this->do_upload()         
+            'judul_saran' => $judul,
+            'isi_saran' => $isi,
+            'lampiran_saran' => $this->do_upload()         
         );
-        $this->db->insert('tb_aspirasi', $data);
+        $this->db->insert('tb_saran', $data);
     }
     function deleteSaran($where, $table, $id)
     { //method hapus data
@@ -72,33 +72,33 @@ class Md_saran extends MX_Controller
     }
     public function editSaran()
     {
-        $lampiran = $_FILES['lampiran_aspirasi'];
+        $lampiran = $_FILES['lampiran_saran'];
         if ($lampiran['name'] != '') {
-            $id = $this->input->post('id_aspirasi');
+            $id = $this->input->post('id_saran');
             $this->_deleteImage($id);
-            $judul = $this->input->post('judul_aspirasi');
-            $isi = $this->input->post('isi_aspirasi');
+            $judul = $this->input->post('judul_saran');
+            $isi = $this->input->post('isi_saran');
             $jumlah = $this->input->post('pupuk_jumlah');
             $deskripsi = $this->input->post('pupuk_deskripsi');
             $data = array(
-                'judul_aspirasi' => $judul,
-                'isi_aspirasi' => $isi,
-                'lampiran_aspirasi' => $this->do_upload()
+                'judul_saran' => $judul,
+                'isi_saran' => $isi,
+                'lampiran_saran' => $this->do_upload()
             );
-            $this->db->where('id_aspirasi', $id);
-            $this->db->update('tb_aspirasi', $data);
+            $this->db->where('id_saran', $id);
+            $this->db->update('tb_saran', $data);
         } else {
-            $id = $this->input->post('id_aspirasi');
-            $judul = $this->input->post('judul_aspirasi');
-            $isi = $this->input->post('isi_aspirasi');
+            $id = $this->input->post('id_saran');
+            $judul = $this->input->post('judul_saran');
+            $isi = $this->input->post('isi_saran');
             $lampiran = $this->input->post('pupuk_jumlah');
             $data = array(
-                'judul_aspirasi' => $judul,
-                'isi_aspirasi' => $isi,
-                'lampiran_aspirasi' => $lampiran
+                'judul_saran' => $judul,
+                'isi_saran' => $isi,
+                'lampiran_saran' => $lampiran
             );
-            $this->db->where('id_aspirasi', $id);
-            $this->db->update('tb_aspirasi', $data);
+            $this->db->where('id_saran', $id);
+            $this->db->update('tb_saran', $data);
         }
     }
 }

@@ -25,4 +25,7 @@
   <link rel="stylesheet" href="<?= base_url('assets/dashboard/plugins/daterangepicker/daterangepicker.css') ?>">
   <!-- summernote -->
   <link rel="stylesheet" href="<?= base_url('assets/dashboard/plugins/summernote/summernote-bs4.min.css') ?>">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+ 
 </head>
