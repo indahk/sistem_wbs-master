@@ -37,7 +37,7 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
           <li class="nav-header">Dashboard</li>
-            <a href="<?= base_url('') ?>#" class="nav-link ">
+            <a href="<?= base_url('dashboard1/DashboardController1') ?>" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard

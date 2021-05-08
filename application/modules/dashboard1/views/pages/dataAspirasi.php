@@ -55,6 +55,18 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
+                    <!-- Date and time range -->
+                    <div class="form-group">
+                  <label>Date range button:</label>
+
+                  <div class="input-group">
+                    <button type="button" class="btn btn-default float-right" id="daterange-btn">
+                      <i class="far fa-calendar-alt"></i> Date range picker
+                      <i class="fas fa-caret-down"></i>
+                    </button>
+                  </div>
+                </div>
+                <!-- /.form group --> 
                 <!-- <h3 class="card-title">DataTable with minimal features & hover style</h3> -->
               </div>
               <!-- /.card-header -->
@@ -85,11 +97,11 @@
                       <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <div class="dropdown-menu" role="menu">
-                      <a class="dropdown-item" href="">Detail</a>
-                      <a class="dropdown-item" href="#">Edit</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <a class="dropdown-item" href="<?=base_url('masukan/Aspirasi/showAspirasi') ?>">Detail</a>
+                      <a class="dropdown-item" href="<?=base_url('') ?>#">Edit</a>
+                      <a class="dropdown-item" href="<?=base_url('') ?>#">Something else here</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Separated link</a>
+                      <a class="dropdown-item" href="<?=base_url('') ?>#">Separated link</a>
                     </div>
                   </div>
 
@@ -189,6 +201,8 @@
 <script src="<?= base_url('assets/dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
 <!-- Bootstrap 4 -->
 <script src="<?= base_url('assets/dashboard/plugins/datatables/jquery.dataTables.min.js')?>"></script>
+<!-- date-range-picker -->
+<script src="<?= base_url('assets/dashboard/plugins/daterangepicker/daterangepicker.js') ?>"></script>
 <!-- DataTables  & Plugins -->
 <script src="<?= base_url('assets/dashboard/plugins/datatables/jquery.dataTables.min.js')?>"></script>
 <script src="<?= base_url('assets/dashboard/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')?>"></script>
@@ -222,7 +236,31 @@
       "autoWidth": false,
       "responsive": true,
     });
+  
   });
 </script>
+
+<!-- Page specific script -->
+<script>
+  $(function () {
+    //Date range as a button
+    $('#daterange-btn').daterangepicker(
+      {
+        ranges   : {
+          'Today'       : [moment(), moment()],
+          'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
+          'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+        
+      }
+    )
+
+  });
+
+</script>
+
 </body>
 </html>

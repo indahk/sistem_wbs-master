@@ -43,12 +43,14 @@ class Aspirasi extends MX_Controller{
 
 
 
-    public function showAspirasi(){
-		$this->Md_aspirasi->allAspirasi();
+    public function showAspirasi()
+	{		$data             = $this->input->post('id_aspirasi');
+		$this->load->view('dashboard1/pages/detailAspirasi',$data);
 
     }
 
-    public function getAspirasi(){
+    public function getAspirasi()
+	{
         
     }
 
