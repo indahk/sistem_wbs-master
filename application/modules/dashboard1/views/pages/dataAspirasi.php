@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="<?= base_url('assets/dashboard/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')?>">
   <link rel="stylesheet" href="<?= base_url('assets/dashboard/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')?>">
   <link rel="stylesheet" href="<?= base_url('assets/dashboard/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')?>">
+  <!-- daterange picker -->
+  <link rel="stylesheet" href="<?= base_url('assets/dashboard/plugins/daterangepicker/daterangepicker.css') ?>">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= base_url('assets/dashboard/dist/css/adminlte.min.css')?>">
 </head>
@@ -220,6 +222,7 @@
 <script src="<?= base_url('assets/dashboard/dist/js/adminlte.min.js')?>."></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?= base_url('assets/dashboard/dist/js/demo.js')?>"></script>
+
 <!-- Page specific script -->
 <script>
   $(function () {
@@ -240,27 +243,6 @@
   });
 </script>
 
-<!-- Page specific script -->
-<script>
-  $(function () {
-    //Date range as a button
-    $('#daterange-btn').daterangepicker(
-      {
-        ranges   : {
-          'Today'       : [moment(), moment()],
-          'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-          'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
-          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
-          'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-        }
-        
-      }
-    )
-
-  });
-
-</script>
 
 </body>
 </html>

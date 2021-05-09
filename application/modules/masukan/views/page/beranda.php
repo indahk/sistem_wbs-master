@@ -16,41 +16,7 @@
         </div>
     </div>
 </footer>
-<!-- ======= Cliens Section
-<section id                                     = "cliens" class="cliens section-bg">
-<div class                                      = "container">
 
-  <div class                                    = "row" data-aos="zoom-in">
-
-    <div class                                  = "col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-      <img src                                  = "assets/img/clients/client-1.png" class="img-fluid" alt="">
-    </div>
-
-    <div class                                  = "col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-      <img src                                  = "assets/img/clients/client-2.png" class="img-fluid" alt="">
-    </div>
-
-    <div class                                  = "col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-      <img src                                  = "assets/img/clients/client-3.png" class="img-fluid" alt="">
-    </div>
-
-    <div class                                  = "col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-      <img src                                  = "assets/img/clients/client-4.png" class="img-fluid" alt="">
-    </div>
-
-    <div class                                  = "col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-      <img src                                  = "assets/img/clients/client-5.png" class="img-fluid" alt="">
-    </div>
-
-    <div class                                  = "col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-      <img src                                  = "assets/img/clients/client-6.png" class="img-fluid" alt="">
-    </div>
-
-  </div>
-
-</div>
-</section>
-End Cliens Section -->
 
 <!-- ======= About Us Section ======= -->
 <section id                                     = "about" class="about">
@@ -90,7 +56,7 @@ End Cliens Section -->
 </section><!-- End About Us Section -->
 
 <!-- ======= Why Us Section ======= -->
-<!--<section id                                 = "why-us" class="why-us section-bg">
+a<section id                                 = "why-us" class="why-us section-bg">
 <div class                                      = "container-fluid" data-aos="fade-up">
 
   <div class                                    = "row">
@@ -143,7 +109,7 @@ End Cliens Section -->
 
 </div>
 </section> 
-End Why Us Section --> -->
+<!-- ======= End Why Us Section ======= -->
 
 
 
@@ -542,7 +508,7 @@ End Team Section -->
 ======= -->
 <!-- End Pricing Section -->
 
-<!-- ======= Frequently Asked Questions Section ======= -->
+<!-- ======= Frequently Asked Questions Section 
 <section id                                     = "faq" class="faq section-bg">
     <div class                                  = "container" data-aos="fade-up">
 
@@ -604,7 +570,9 @@ End Team Section -->
         </div>
 
     </div>
-</section><!-- End Frequently Asked Questions Section -->
+</section>
+
+ End Frequently Asked Questions Section -->
 
 <!-- ======= Contact Section ======= -->
 <section id                                     = "contact" class="contact">

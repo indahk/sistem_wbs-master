@@ -104,7 +104,10 @@
 
   <!-- Template Main JS File -->
   <script src="<?= base_url('assets/js/main.js')?>"></script>
+  <!-- dropzonejs -->
+<script src="assets/dashboard/plugins/dropzone/min/dropzone.min.js"></script>
+
 
 </body>
 
-</html>
+</html>z

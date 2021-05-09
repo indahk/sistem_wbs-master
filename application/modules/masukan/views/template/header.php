@@ -49,6 +49,9 @@
   <script src="<?=base_url('assets/vendor/owl.carousel/owl.carousel.min.js') ?>"></script>
   <script src="<?=base_url('assets/vendor/aos/aos.js') ?>"></script>
 
+    <!-- dropzonejs -->
+    <link rel="stylesheet" href="assets/dashboard/plugins/dropzone/min/dropzone.min.css">
+
   <!-- Template Main JS File -->
   <script src="<?= base_url('assets/js/main.js') ?>"></script>
   
@@ -57,7 +60,7 @@
     <div class="container d-flex align-items-center">
 
       <h1 class="logo mr-auto"><a href="index.html">WBS Sistem</a></h1>
-      <img class="kiri" src="<?= base_url('assets/colorlibLogin/images/small_logo_pcr.png') ?>" >
+      <!-- <img class="kiri" src="<?= base_url('assets/colorlibLogin/images/small_logo_pcr.png') ?>" > -->
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
