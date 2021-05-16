@@ -1,7 +1,7 @@
 <?php 
 (defined('BASEPATH')) OR exit('No direct script access allowed');
 
-class Auth extends MX_Controller{
+class userAccount extends MX_Controller{
 
     public function __construct()
     {
@@ -13,7 +13,7 @@ class Auth extends MX_Controller{
 
 
 
-$user = new User();
+ $user = new User();
 if(isset($_POST['signupSubmit'])){
     //check whether user details are empty
     if(!empty($_POST['first_name']) && !empty($_POST['last_name']) && !empty($_POST['email']) && !empty($_POST['phone']) && !empty($_POST['password']) && !empty($_POST['confirm_password'])){

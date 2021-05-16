@@ -1,31 +1,32 @@
-<?php 
-(defined('BASEPATH')) OR exit('No direct script access allowed');
+<?php
+(defined('BASEPATH')) or exit('No direct script access allowed');
 
-class Auth extends MX_Controller{
+class Auth extends MX_Controller
+{
 
     public function __construct()
     {
         parent::__construct();
         $this->load->library('session');
         $this->load->library('form_validation');
-       // $this->load->model('Md_akun');
+        // $this->load->model('Md_akun');
     }
 
     public function index()
     {
 
-        $this->load->view('auth/login'); 
+        $this->load->view('auth/login');
 
 
         //modules::run('auth/viwes/login');  
-        
+
         //$this->load->module('module/views');
         //$this->controller->method();
         //modules::run('module/views/login');
         //$this->load->module::run('login');
         // $this->load->views('login');     
         //echo "Alhamdullillah Bisa";
-    
+
     }
 
     public function register()
@@ -34,11 +35,13 @@ class Auth extends MX_Controller{
         $this->load->view('register');
     }
 
-    public function forgot(){
+    public function forgot()
+    {
         $this->load->view("forgot-password");
     }
-        
-    public function alih(){
+
+    public function alih()
+    {
         $this->load->view("dashboard1/dashboard");
     }
 }
