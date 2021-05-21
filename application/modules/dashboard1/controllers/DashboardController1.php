@@ -13,12 +13,21 @@ class DashboardController1 extends MX_Controller{
 
     public function index()
     {
+        $jml_aspirasi=$this->db->query("SELECT * FROM tb_aspirasi");
+        $jml_saran=$this->db->query("SELECT * FROM tb_saran");
+        $jml_lapor=$this->db->query("SELECT * FROM tb_lapor");
+        $jml_permohonan=$this->db->query("SELECT * FROM tb_permohonan");
+        $data['jml_aspirasi']=$jml_aspirasi->num_rows();
+        $data['jml_saran']=$jml_saran->num_rows();
+        $data['jml_lapor']=$jml_lapor->num_rows();
+        $data['jml_permohonan']=$jml_permohonan->num_rows();
+        
         //$this->load->view('template/admin_header');
         //$this->load->view('dashboard/template/admin_head');
        // $this->load->view('dashboard1/template/head');
         //$data['menu'] = $this->load->view('dashboard1/template/head', NULL, TRUE);
        // $this->load->view('dashboard1/template/navbar');
-        $this->load->view('dashboard1/dashboard'); 
+        $this->load->view('dashboard1/dashboard',$data); 
         //$this->load->view('dashboard/template/admin_footer');
 
         //modules::run('auth/viwes/login');  

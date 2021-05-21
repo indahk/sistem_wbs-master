@@ -81,13 +81,12 @@
                             </button>
                         </div>
 
-                        <div class="container-login100-form-btn m-t-17">
-                            <button class="login100-form-btn">
-                            <img src="<?= base_url('assets/colorlibLogin/images/icons/icon-google.png') ?>">
-                            </button>
+                        <div>
+                        <a href="<?= base_url('auth/Google_login') ?>">
+						    <img src="<?= base_url('assets/img/icon-google.png')?>" alt="GOOGLE">
+						    Google
+					    </a>
                         </div>
-                        
-                       
 
                         <div class="w-full text-center p-t-55">
                             <span class="txt2">
