@@ -10,101 +10,66 @@ class Md_lapor extends MX_Controller
         $this->load->library('upload');
         $this->load->helper(array('form', 'url'));
     }
-    public function allAspirasi()
+    public function allLapor()
     {
-        $query = $this->db->query('select * from tb_lapor'); //mendapatkan seluruh data di tb_lappor
+        $query = $this->db->query("SELECT * FROM tb_masukan WHERE id_jenis='JN003'"); //mendapatkan seluruh data di tb_lappor
         return $query->result(); //mengembalikan nilai berupa array
     }
-    public function getAspirasi($id)
+    public function getLapor($id)
     {
         $this->db->distinct();
         $this->db->select("*");
-        $this->db->from("tb_lapor");
-        $this->db->where("id_lapor", $id);
-        return $data = $this->db->get()->result_array(); //mengembalikan nilai berupa array
+        $this->db->from("vw_lapor ");
+        $this->db->where("id_masukan", $id);
+        return $data_lapor = $this->db->get()->result_array(); //mengembalikan nilai berupa array
     }
-    private function do_lampiran()
+    // private function do_lampiran()
+    // {
+    //     $lampiran = $_FILES['lampiran_lapor'];
+    //     if ($lampiran = null) {
+    //         echo "nill";
+    //     } else {
+    //         $config['upload_path']          = './assets/img/';
+    //         $config['allowed_types']        = 'gif|jpg|png|jpeg';
+    //         $this->upload->initialize($config);
+    //         if (!$this->upload->do_upload('lampiran_lapo')) {
+    //             echo "gagal upload";
+    //             die();
+    //         } else {
+    //             $lampiran = $this->upload->data('file_name');
+    //             return $lampiran;
+    //         }
+    //     }
+    // }
+    // private function _deleteLampiran($id)
+    // {
+    //     $product = $this->getlapor($id);
+    //     $prd = $product[0];
+    //     var_dump($prd);
+    //     if ($prd['foto_pupuk'] != null) {
+    //         $filename = explode(".", $prd['foto_pupuk'])[0];
+    //         return array_map('unlink', glob(FCPATH . "assets/img/pupuk/$filename.*"));
+    //     }
+    // }
+    public function addLapor()
     {
-        $lampiran = $_FILES['lampiran_lapor'];
-        if ($lampiran = null) {
-            echo "nill";
-        } else {
-            $config['upload_path']          = './assets/img/';
-            $config['allowed_types']        = 'gif|jpg|png|jpeg';
-            $this->upload->initialize($config);
-            if (!$this->upload->do_upload('lampiran_lapo')) {
-                echo "gagal upload";
-                die();
-            } else {
-                $lampiran = $this->upload->data('file_name');
-                return $lampiran;
-            }
-        }
+        // $nama = $this->input->post('nama_pelapor');
+        // $email = $this->input->post('email_pelapor');
+        // $no_tlpn = $this->input->post('tlpn_pelapor');
+        // $judul_laporan = $this->input->post('pupuk_deskripsi');
+        // $kt_lapor=$this->input->post('');
+        // $kt_pelapor=$this->input->post('');
+        // $isi_laporan=$this->input->post('   ');
+        // $lampiran=$this->input->post('');
+        // // $data = array(
+        // //     'nama_pupuk' => $nama,
+        // //     'harga_pupuk' => $harga,
+        // //     'jumlah_pupuk' => $jumlah,
+        // //     'foto_pupuk' => $this->do_upload(),
+        // //     'deskripsi' => $deskripsi
+        // // );
+        // // $this->db->insert('pupuk', $data);
     }
-    private function _deleteLampiran($id)
-    {
-        $product = $this->getlapor($id);
-        $prd = $product[0];
-        var_dump($prd);
-        if ($prd['foto_pupuk'] != null) {
-            $filename = explode(".", $prd['foto_pupuk'])[0];
-            return array_map('unlink', glob(FCPATH . "assets/img/pupuk/$filename.*"));
-        }
-    }
-    public function addlapor()
-    {
-        $judul = $this->input->post('pupuk_nama');
-        $isi = $this->input->post('pupuk_harga');
-        $jumlah = $this->input->post('pupuk_jumlah');
-        $deskripsi = $this->input->post('pupuk_deskripsi');
-        $data = array(
-            'nama_pupuk' => $nama,
-            'harga_pupuk' => $harga,
-            'jumlah_pupuk' => $jumlah,
-            'foto_pupuk' => $this->do_upload(),
-            'deskripsi' => $deskripsi
-        );
-        $this->db->insert('pupuk', $data);
-    }
-    function deletelapor($where, $table, $id)
-    { //method hapus data
-        var_dump($this->_deleteImage($id));
-        $this->db->where($where); //id data
-        $this->db->delete($table); //table apa
-    }
-    public function editlapor()
-    {
-        $foto = $_FILES['pupuk_foto'];
-        if ($foto['name'] != '') {
-            $id = $this->input->post('pupuk_id');
-            $this->_deleteImage($id);
-            $nama = $this->input->post('pupuk_nama');
-            $harga = $this->input->post('pupuk_harga');
-            $jumlah = $this->input->post('pupuk_jumlah');
-            $deskripsi = $this->input->post('pupuk_deskripsi');
-            $data = array(
-                'nama_pupuk' => $nama,
-                'harga_pupuk' => $harga,
-                'jumlah_pupuk' => $jumlah,
-                'foto_pupuk' => $this->do_upload(),
-                'deskripsi' => $deskripsi
-            );
-            $this->db->where('id_pupuk', $id);
-            $this->db->update('pupuk', $data);
-        } else {
-            $id = $this->input->post('pupuk_id');
-            $nama = $this->input->post('pupuk_nama');
-            $harga = $this->input->post('pupuk_harga');
-            $jumlah = $this->input->post('pupuk_jumlah');
-            $deskripsi = $this->input->post('pupuk_deskripsi');
-            $data = array(
-                'nama_pupuk' => $nama,
-                'harga_pupuk' => $harga,
-                'jumlah_pupuk' => $jumlah,
-                'deskripsi' => $deskripsi
-            );
-            $this->db->where('id_pupuk', $id);
-            $this->db->update('pupuk', $data);
-        }
-    }
+
 }
+  

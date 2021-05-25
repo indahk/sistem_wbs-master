@@ -8,10 +8,14 @@ class Aspirasi extends MX_Controller{
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->model('Md_aspirasi');
+
+
 	}
 
 	public function index()
 	{   
+		
+		// $this->load->view('Kode_otomatis', $data);
 		//	$this->load->view('templates/header');
 		//	$this->load->view('templates/hero_section');
 		//	$this->load->view('pages/aspirasi');
@@ -44,7 +48,8 @@ class Aspirasi extends MX_Controller{
 
 
     public function showAspirasi()
-	{		$data             = $this->input->post('id_aspirasi');
+	{		$data['kode'] = $this->kode_m->kode();
+		$data['tampil'] = $this->kode_m->tampil(); 
 		$this->load->view('dashboard1/pages/detailAspirasi',$data);
 
     }

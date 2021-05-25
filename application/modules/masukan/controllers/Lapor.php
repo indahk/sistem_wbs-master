@@ -11,8 +11,8 @@ class Lapor extends MX_Controller{
 	}
 
 	public function index()
-	{     $jml_lapor=$this->db->query("SELECT * FROM tb_lapor");
-        $data['jml_lapor']=$jml_lapor->num_rows();
+	{     $jml_lapor=$this->db->query("SELECT * FROM tb_masukan WHERE id_jenis='JN003'");
+        // $data['jml_lapor']=$jml_lapor->num_rows();
         //	$this->load->view('templates/header');
         //	$this->load->view('templates/hero_section');
         //	$this->load->view('pages/aspirasi');

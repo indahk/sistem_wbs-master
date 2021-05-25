@@ -62,7 +62,7 @@ class Google_login extends MX_Controller
 
                 $current_datetime = date('Y-m-d H:i:s');
 
-                var_dump($data);
+                // var_dump($data);
 
                 $this->Google_loginModel->Is_already_register($data['id']);
 
@@ -99,7 +99,7 @@ class Google_login extends MX_Controller
             $data['login_button'] = $login_button;
             $this->load->view('google_login', $data);
         } else {
-            $this->load->view('google_login', $data);
+            $this->load->view('google_login');
         }
     }
 

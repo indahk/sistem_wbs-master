@@ -68,7 +68,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3><?= $jml_saran ?><sup style="font-size: 20px">%</sup></h3>
+                <h3><?= $jml_saran ?><sup style="font-size: 20px"></sup></h3>
 
                 <p>Saran</p>
               </div>
