@@ -9,23 +9,19 @@ class Auth extends MX_Controller
         parent::__construct();
         $this->load->library('session');
         $this->load->library('form_validation');
-        $this->load->model('user');
+        $this->load->model('Md_akun');
     }
 
     public function index()
     {
 
-        if (isset($_SESSION['name'])) {
-            redirect('UserController');
-        } else if (isset($_SESSION['name_admin'])) {
-            redirect('DashboardController');
-        } else {
-            $data['title'] = "Login";
-            $this->load->view('templates/auth_header', $data);
-            $this->load->view('auth/login');
-            $this->load->view('templates/auth_footer');
-        }
+        $this->load->view('login');
     }
+
+    public function alih(){
+        $this->load->view('dashboard1/dashboard');
+    }
+
     public function login()
     {
 

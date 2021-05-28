@@ -48,7 +48,7 @@ class Aspirasi extends MX_Controller{
 
 
     public function showAspirasi()
-	{		$data['kode'] = $this->kode_m->kode();
+	{	$data['kode'] = $this->kode_m->kode();
 		$data['tampil'] = $this->kode_m->tampil(); 
 		$this->load->view('dashboard1/pages/detailAspirasi',$data);
 

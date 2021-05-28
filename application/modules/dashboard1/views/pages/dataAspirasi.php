@@ -149,8 +149,7 @@
                     </thead>
                     <tbody>
 
-                    <?php $i = 1;
-                        foreach ($data as $riwayat) { ?>
+                   
                       <tr>
                         <td>01</td>
                         <td>Aspirasi Public</td>
@@ -160,7 +159,7 @@
                         <td>
                       </tr>
                       
-                      <?php } ?>
+                    
                     </tbody>
 
                     <tfoot>

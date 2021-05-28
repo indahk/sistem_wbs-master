@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Permohonan extends MX_Controller{
+class Permintaan extends MX_Controller{
  
 	function __construct() 
 	{
 		parent::__construct();
 		$this->load->helper('url');
-		$this->load->model('Md_permohonan');
+		$this->load->model('Md_permintaan');
 	}
 
 	public function index()
@@ -19,36 +19,36 @@ class Permohonan extends MX_Controller{
         //  echo 'Hai ini adalah halaman aspirasi';
         $this->load->view('template/header');
         $this->load->view('hero_section');
-        $this->load->view('form/form_permohonan');
+        $this->load->view('form/form_permintaan');
         $this->load->view('template/footer');
 
         
 	}
 
-	public function addPermohonan(){
-		$this->Md_permohonan->addPermohonan();
+	public function addPermintaan(){
+		$this->Md_permintaan->addPermohonan();
         $this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil Ditambahkan!</div>');
-        redirect('/Permohonan/showPermohonan');
+        redirect('/Permintaan/showPermohonan');
 	}
 
     public function deletePermohonan(){
-		$this->Md_permohonan->deletePermohonan();
+		$this->Md_permintaan->deletePermohonan();
 
 		$id             = $this->input->post('id_permohonan');
         $where    = array('id_permohonan' => $id);
-        $this->Md_permohonan->deletePermohonan($where, 'tb_permohonan', $id);
+        $this->Md_permintaan->deletePermohonan($where, 'tb_permohonan', $id);
         $this->session->set_flashdata('message', '<div class="alert alert-danger">Data Berhasil Dihapus!</div>');
         redirect('/Permohonan/showPermohonan');
     }
 
 
 
-    public function showPermohonan(){
-		$this->Md_permohonan->alPermohonan();
+    public function showPemrintaan(){
+		$this->Md_permintaan->alPemrintaan();
 
     }
 
-    public function getPermohonan(){
+    public function getPemrintaan(){
         
     }
 
