@@ -1,28 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<!-- Include Head -->
-<?php $this->load->view('dashboard1/template/head'); ?>
-
-
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
-
-
-  <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="<?= base_url('assets/dashboard/dist/img/AdminLTELogo.png') ?>" alt="AdminLTELogo" height="60" width="60">
-  </div>
-
-
-
-<!-- Include Navbar -->
-  <?php $this->load->view('dashboard1/template/navbar'); ?>
-
-
-<!-- Include Sidebar -->
-<?php $this->load->view('dashboard1/template/sidebar'); ?>
-<!---/Include Sidebar -->
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -60,7 +36,7 @@
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="<?= base_url('dashboard1/pages/dataAspirasi') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?= base_url('dashboard/pages/dataAspirasi') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -75,7 +51,7 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="<?= base_url('dashboard1/pages/dataSaran') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?= base_url('dashboard/pages/dataSaran') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -280,8 +256,5 @@
 <!-- ./wrapper -->
 
 
-<!-- Include Footer -->
-<?= $this->load->view('dashboard1/template/foot') ?>
 
-</body>
-</html>
+

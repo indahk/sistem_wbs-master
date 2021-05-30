@@ -34,3 +34,6 @@
 <script src="<?= base_url('assets/dashboard/dist/js/demo.j') ?>s"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="<?= base_url('assets/dashboard/dist/js/pages/dashboard.js') ?>"></script>
+
+</body>
+</html>

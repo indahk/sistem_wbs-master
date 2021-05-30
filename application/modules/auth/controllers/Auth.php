@@ -14,12 +14,13 @@ class Auth extends MX_Controller
 
     public function index()
     {
-
+        $this->load->view('template/include_headerlogin');
         $this->load->view('login');
+        $this->load->view('template/include_footerlogin');
     }
 
-    public function alih(){
-        $this->load->view('dashboard1/dashboard');
+    public function Beranda(){
+        $this->load->view('dashboard/Dashboard');
     }
 
     public function login()
@@ -29,7 +30,7 @@ class Auth extends MX_Controller
 
         if ($this->form_validation->run() == false) {
             $this->session->set_flashdata('message', '<div class="alert alert-danger">your credential is incorrect!</div>');
-            redirect('/');
+            redirect('dashboard/Dashboard');
         } else {
             $email = $this->input->post('email');
             $password = $this->input->post('password');
@@ -44,7 +45,7 @@ class Auth extends MX_Controller
                             'email_admin' => $user['email']
                         );
                         $this->session->set_userdata($dataSession);
-                        redirect('DashboardController');
+                        redirect('Dashboard');
                     } else if ($password['jenis_akun'] == 2) {
                         $dataSession = array(
                             'name_pengurus' => $user['nama'],

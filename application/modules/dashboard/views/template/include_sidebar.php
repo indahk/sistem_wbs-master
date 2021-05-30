@@ -37,7 +37,7 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
           <li class="nav-header">Dashboard</li>
-            <a href="<?= base_url('dashboard1/DashboardController1') ?>" class="nav-link ">
+            <a href="<?= base_url('Dashboard') ?>" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -47,7 +47,7 @@
             
           </li>
           <li class="nav-item">
-            <a href="<?= base_url('dashboard1/DashboardController1/dataAspirasi') ?>" class="nav-link">
+            <a href="<?= base_url('Dashboard/dataAspirasi') ?>" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Aspirasi
@@ -56,7 +56,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?= base_url('masukan/Saran/showSaran') ?>" class="nav-link">
+            <a href="<?= base_url('Dashboard/dataSaran') ?>" class="nav-link">
               <i class="nav-icon fas fa-columns"></i>
               <p>
                 Saran
@@ -67,7 +67,7 @@
 
           </li>
           <li class="nav-item">
-            <a href="<?= base_url('') ?>#" class="nav-link">
+            <a href="<?= base_url('Dashboard/dataLapor') ?>" class="nav-link">
               <i class="nav-icon far fa-envelope"></i>
               <p>
                 Pelaporan Pelanggaran
@@ -77,7 +77,7 @@
 
           </li>
           <li class="nav-item">
-            <a href="<?= base_url('') ?>#" class="nav-link">
+            <a href="<?= base_url('Dashboard/dataPermintaan') ?>" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Permintaan Informasi
