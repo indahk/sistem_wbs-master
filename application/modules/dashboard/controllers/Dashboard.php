@@ -21,9 +21,11 @@ class Dashboard extends MX_Controller{
         $data['jml_saran']=$jml_saran->num_rows();
         $data['jml_lapor']=$jml_lapor->num_rows();
         $data['jml_permohonan']=$jml_permohonan->num_rows();
+        $data['title'] = 'Dasboard';
+
         
         
-        $this->load->view('dashboard/template/include_header');
+        $this->load->view('dashboard/template/include_header',$data);
         $this->load->view('dashboard/template/include_navbar');
         $this->load->view('dashboard/template/include_sidebar');
         $this->load->view('dashboard/pages/dashboard',$data); 
@@ -34,9 +36,9 @@ class Dashboard extends MX_Controller{
 
     public function dataAspirasi()
     {
-        
+        $data['title'] = 'Data Aspirasi';
         //echo "Alhamdullillah Bisa";
-        $this->load->view('dashboard/template/include_headerdata');
+        $this->load->view('dashboard/template/include_header',$data);
         $this->load->view('dashboard/template/include_navbar');
         $this->load->view('dashboard/template/include_sidebar');
         $this->load->view('dashboard/pages/dataAspirasi');
@@ -45,10 +47,10 @@ class Dashboard extends MX_Controller{
 
 
     public function dataSaran()
-    {
-        
+    {   
+        $data['title'] = 'Data Saran';
         //echo "Alhamdullillah Bisa";
-        $this->load->view('dashboard/template/include_headerdata');
+        $this->load->view('dashboard/template/include_header',$data);
         $this->load->view('dashboard/template/include_navbar');
         $this->load->view('dashboard/template/include_sidebar');
         $this->load->view('dashboard/pages/dataSaran');
@@ -58,9 +60,10 @@ class Dashboard extends MX_Controller{
 
     public function dataLapor()
     {
-        
+         
+        $data['title'] = 'Data Laporan Pelanggaran';
         //echo "Alhamdullillah Bisa";
-        $this->load->view('dashboard/template/include_headerdata');
+        $this->load->view('dashboard/template/include_header',$data);
         $this->load->view('dashboard/template/include_navbar');
         $this->load->view('dashboard/template/include_sidebar');
         $this->load->view('dashboard/pages/dataLapor');
@@ -70,13 +73,27 @@ class Dashboard extends MX_Controller{
 
     public function dataPermintaan()
     {
-        
+         
+        $data['title'] = 'Data Permintaan Informasi';
         //echo "Alhamdullillah Bisa";
-        $this->load->view('dashboard/template/include_headerdata');
+        $this->load->view('dashboard/template/include_header',$data);
         $this->load->view('dashboard/template/include_navbar');
         $this->load->view('dashboard/template/include_sidebar');
         $this->load->view('dashboard/pages/dataPermintaan');
         $this->load->view('dashboard/template/include_footerdata');
+    }
+
+    public function showAspirasi()
+    {
+        $data['title'] = 'Detail Aspirasi';
+
+		// modules::load('dashboard');
+		$this->load->view('dashboard/template/include_header',$data);
+		$this->load->view('dashboard/template/include_navbar');
+		$this->load->view('dashboard/template/include_sidebar');
+		$this->load->view('dashboard/pages/detailAspirasi');
+		$this->load->view('dashboard/template/include_footer');
+
     }
 
 
@@ -85,4 +102,4 @@ class Dashboard extends MX_Controller{
     }
         
     
-}
+} 

@@ -21,10 +21,11 @@ class Aspirasi extends MX_Controller{
 		//	$this->load->view('pages/aspirasi');
 		//	$this->load->view('templates/footer');
 		//  echo 'Hai ini adalah halaman aspirasi';
-		$this->load->view('template/header');
-		$this->load->view('hero_section');
-		$this->load->view('form/form_aspirasi');
-		$this->load->view('template/footer');
+		modules::load('Beranda');
+		$this->load->view('Beranda/template/header');
+		$this->load->view('Beranda/template/hero_section');
+		$this->load->view('Beranda/form/form_aspirasi');
+		$this->load->view('Beranda/template/footer');
 
         
 	}
@@ -48,10 +49,18 @@ class Aspirasi extends MX_Controller{
 
 
     public function showAspirasi()
-	{	$data['kode'] = $this->kode_m->kode();
-		$data['tampil'] = $this->kode_m->tampil(); 
-		$this->load->view('dashboard1/pages/detailAspirasi',$data);
+	{
+	// 	$data['kode'] = $this->kode_m->kode();
+	// 	$data['tampil'] = $this->kode_m->tampil();
+		
+		$data['title'] = 'Detail Aspirasi';
 
+		modules::load('dashboard');
+		$this->load->view('dashboard/template/include_header',$data);
+		$this->load->view('dashboard/template/include_navbar');
+		$this->load->view('dashboard/template/include_sidebar');
+		$this->load->view('dashboard/pages/detailAspirasi');
+		$this->load->view('dashboard/template/include_footer');
     }
 
     public function getAspirasi()

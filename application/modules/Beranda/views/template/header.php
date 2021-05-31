@@ -66,11 +66,11 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="<?= base_url('masukan/Beranda') ?>">Beranda</a></li>
-          <li><a href="<?= base_url('masukan/Aspirasi')?>">Aspirasi</a></li>
-          <li><a href="<?= base_url('masukan/Saran')?>">Saran</a></li>
-          <li><a href="<?= base_url('masukan/Lapor')?>">Lapor Pelanggaran</a></li>
-          <li><a href="<?= base_url('masukan/Permohonan')?>">Permohonan Informasi</a></li>
+          <li class="active"><a href="<?= base_url('Beranda') ?>">Beranda</a></li>
+          <li><a href="<?= base_url('Aspirasi')?>">Aspirasi</a></li>
+          <li><a href="<?= base_url('Beranda/Saran')?>">Saran</a></li>
+          <li><a href="<?= base_url('Beranda/Lapor')?>">Lapor Pelanggaran</a></li>
+          <li><a href="<?= base_url('Beranda/Permohonan')?>">Permohonan Informasi</a></li>
           <li class="drop-down"><a href="">Layanan</a>
             <ul>
               <li><a href="<?= base_url('auth/Google_login') ?>">Login</a></li>

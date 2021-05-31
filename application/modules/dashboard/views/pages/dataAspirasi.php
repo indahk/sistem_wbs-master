@@ -67,7 +67,7 @@
                                 <span class="sr-only">Toggle Dropdown</span>
                               </button>
                               <div class="dropdown-menu" role="menu">
-                                <a class="dropdown-item" href="<?= base_url('masukan/Aspirasi/showAspirasi') ?>">Detail</a>
+                                <a class="dropdown-item" href="<?= base_url('Dashboard/showAspirasi') ?>">Detail</a>
                                 <a class="dropdown-item" href="<?= base_url('') ?>#">Edit</a>
                                 <a class="dropdown-item" href="<?= base_url('') ?>#">Something else here</a>
                                 <div class="dropdown-divider"></div>
