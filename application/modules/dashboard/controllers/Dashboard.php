@@ -13,6 +13,10 @@ class Dashboard extends MX_Controller{
 
     public function index()
     {
+        $page_data['page_name']='pengguna';
+        $page_data['page_title']='';
+        $page_data['page_desc']='';
+
         $jml_aspirasi=$this->db->query("SELECT * FROM vw_aspirasi");
         $jml_saran=$this->db->query("SELECT * FROM vw_saran");
         $jml_lapor=$this->db->query("SELECT * FROM vw_lapor");
@@ -34,15 +38,20 @@ class Dashboard extends MX_Controller{
     
     }
 
-    public function dataAspirasi()
+    public function getAspirasi()
     {
-        $data['title'] = 'Data Aspirasi';
-        //echo "Alhamdullillah Bisa";
-        $this->load->view('dashboard/template/include_header',$data);
-        $this->load->view('dashboard/template/include_navbar');
-        $this->load->view('dashboard/template/include_sidebar');
-        $this->load->view('dashboard/pages/dataAspirasi');
-        $this->load->view('dashboard/template/include_footerdata');
+        modules::run('Aspirasi');
+
+        // $data['title'] = 'Data Aspirasi';
+        
+        // modules::load('Aspirasi');
+        // $data=$this->Aspirasi->getAspirasi();
+        // //echo "Alhamdullillah Bisa";
+        // $this->load->view('dashboard/template/include_header',$data);
+        // $this->load->view('dashboard/template/include_navbar');
+        // $this->load->view('dashboard/template/include_sidebar');
+        // $this->load->view('dashboard/pages/dataAspirasi',$data);
+        // $this->load->view('dashboard/template/include_footerdata');
     }
 
 
@@ -86,7 +95,7 @@ class Dashboard extends MX_Controller{
     public function showAspirasi()
     {
         $data['title'] = 'Detail Aspirasi';
-
+        
 		// modules::load('dashboard');
 		$this->load->view('dashboard/template/include_header',$data);
 		$this->load->view('dashboard/template/include_navbar');
