@@ -15,6 +15,7 @@ class Aspirasi extends MX_Controller{
 	public function index()
 	{   
 		
+		
 		// $this->load->view('Kode_otomatis', $data);
 		//	$this->load->view('templates/header');
 		//	$this->load->view('templates/hero_section');
@@ -22,18 +23,38 @@ class Aspirasi extends MX_Controller{
 		//	$this->load->view('templates/footer');
 		//  echo 'Hai ini adalah halaman aspirasi';
 		modules::load('Beranda');
+		$data=modules::run('Kategori_masukan/getAll');
+		
 		$this->load->view('Beranda/template/header');
 		$this->load->view('Beranda/template/hero_section');
-		$this->load->view('Beranda/form/form_aspirasi');
+		$this->load->view('Beranda/form/form_aspirasi',$data);
 		$this->load->view('Beranda/template/footer');
 
         
 	}
 
+
+	public function get()
+	{
+		modules::load('Beranda');
+		modules::run('Kategori_masukan');
+		$data=$this->load->Kategori_masukan->getAll();
+
+		$this->load->view('Beranda/template/header');
+		$this->load->view('Beranda/template/hero_section');
+		$this->load->view('Beranda/form/form_aspirasi',$data);
+		$this->load->view('Beranda/template/footer');
+	}
+
+
 	public function addAspirasi(){
-		$this->Md_aspirasi->addAspirasi();
-        $this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil Ditambahkan!</div>');
-        redirect('/Aspirasi/showAspirasi');
+		modules::run('Pelapor');
+		// $data=$this->load->pelapor->add();
+
+
+		// $this->Md_aspirasi->addAspirasi();
+        // $this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil Ditambahkan!</div>');
+        // redirect('/Aspirasi/showAspirasi');
 	}
 
     public function deleteAspirasi(){
@@ -54,7 +75,7 @@ class Aspirasi extends MX_Controller{
 	// 	$data['tampil'] = $this->kode_m->tampil();
 		
 		$data['title'] = 'Detail Aspirasi';
-
+		
 		modules::load('dashboard');
 		$this->load->view('dashboard/template/include_header',$data);
 		$this->load->view('dashboard/template/include_navbar');
@@ -63,9 +84,19 @@ class Aspirasi extends MX_Controller{
 		$this->load->view('dashboard/template/include_footer');
     }
 
-    public function getAspirasi()
+    public function show()
 	{
+        $data['result']=$this->Md_aspirasi->allAspirasi();
+		$data['title'] = 'Data Aspirasi';
         
+        modules::load('Dashboard');
+        
+        //echo "Alhamdullillah Bisa";
+        $this->load->view('dashboard/template/include_headerdata',$data);
+        $this->load->view('dashboard/template/include_navbar');
+        $this->load->view('dashboard/template/include_sidebar');
+        $this->load->view('dashboard/pages/dataAspirasi',$data);
+        $this->load->view('dashboard/template/include_footerdata');
     }
 
 	

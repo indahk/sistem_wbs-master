@@ -1,33 +1,32 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Log extends MX_Controller{
+class Kategori_masukan extends MX_Controller{
  
 	function __construct() 
 	{
 		parent::__construct();
 		$this->load->helper('url');
-		$this->load->model('Md_saran');
+		$this->load->model('Md_katMasukan');
 	}
 
 	public function index()
 	{   
-	//	$this->load->view('templates/header');
-	//	$this->load->view('templates/hero_section');
-	//	$this->load->view('pages/aspirasi');
-	//	$this->load->view('templates/footer');
-	//  echo 'Hai ini adalah halaman aspirasi';
-	$this->load->view('template/header');
-	$this->load->view('hero_section');
-	$this->load->view('form/form_saran');
-	$this->load->view('template/footer');
-
+	
         
 	}
 
-    public function showSaran()
+    public function getAll()
     {
-		$this->load->view('dashboard1/pages/dataSaran');
+        $result['data'] = $this->Md_katMasukan->getAll();
+        return $result;
+
+      
+    }
+
+    public function add()
+    {
+		
 
     }
 

@@ -47,7 +47,7 @@
             
           </li>
           <li class="nav-item">
-            <a href="<?= base_url('Dashboard/dataAspirasi') ?>" class="nav-link">
+            <a href="<?= base_url('Aspirasi/show') ?>" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Aspirasi

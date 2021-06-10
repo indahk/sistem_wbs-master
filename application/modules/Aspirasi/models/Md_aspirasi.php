@@ -54,18 +54,23 @@ class Md_Aspirasi extends MX_Controller
     //         return array_map('unlink', glob(FCPATH . "assets/img/pupuk/$filename.*"));
     //     }
     // }
-    // public function addAspirasi()
-    // {
-    //     $judul = $this->input->post('judul_aspirasi');
-    //     $isi = $this->input->post('isi_aspirasi');
-    //     $lampiran = $this->input->post('lampiran');
-    //     $data = array(
-    //         'judul_aspirasi' => $judul,
-    //         'isi_aspirasi' => $isi,
-    //         'lampiran_aspirasi' => $this->do_upload()         
-    //     );
-    //     $this->db->insert('tb_aspirasi', $data);
-    // }
+    public function addAspirasi()
+    {
+        $nama=$this->input->post('nama');
+        $email=$this->input->post('email');
+        $notlpn=$this->input->post('nohp');
+        $kt_aspirasi=$this->input->post('kt_aspirasi');
+        // $kt_pelapor->$this->input->post('kt_pelapor');
+        $judul = $this->input->post('judul_aspirasi');
+        $isi = $this->input->post('isi_aspirasi');
+        $lampiran = $this->input->post('lampiran');
+        $data = array(
+            'judul_aspirasi' => $judul,
+            'isi_aspirasi' => $isi,
+            'lampiran_aspirasi' => $this->do_upload()         
+        );
+        $this->db->insert('vw_aspirasi', $data);
+    }
     // function deleteAspirasi($where, $table, $id)
     // { //method hapus data
     //     var_dump($this->_deleteImage($id));
@@ -103,4 +108,23 @@ class Md_Aspirasi extends MX_Controller
     //         $this->db->update('tb_aspirasi', $data);
     //     }
     // }
+
+    private function do_upload()
+    {
+        $lampiran = $_FILES['lampiran'];
+        if ($lampiran = null) {
+            echo "nill";
+        } else {
+            $config['upload_path']          = './assets/lampiranFile/';
+            $config['allowed_types']        = 'pdf|xls|jpg|png|jpeg';
+            $this->upload->initialize($config);
+            if (!$this->upload->do_upload('lampiran')) {
+                echo "gagal upload";
+                die();
+            } else {
+                $lampiran = $this->upload->data('file_name');
+                return $lampiran;
+            }
+        }
+    }
 }

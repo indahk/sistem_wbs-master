@@ -28,6 +28,11 @@ class Beranda extends MX_Controller{
         
 	}
 
+	public function formAspirasi()
+	{
+		
+	}
+
 
 
 }

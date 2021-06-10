@@ -11,21 +11,21 @@
     </div>
 
     <div class                  = "col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch">
-      <form action              = "aspirasi/add()" method="post" role="form" class="php-email-form">
+      <form action              = "bagian/add" method="post" role="form" class="php-email-form">
         <div class              = "form-group">
           <label for            = "inputAddress">Nama Pelapor</label>
-          <input type           = "text" class="form-control" name="nama" id="inputAddress" placeholder="Nama Anda">
+          <input type           = "text" class="form-control" name="nama_bagian" id="inputAddress" placeholder="Nama Anda">
         </div>
-        <div class              = "form-row">
+        <!-- <div class              = "form-row">
           <div class            = "form-group col-md-6">
             <label for          = "inputEmail4">Email</label>
-            <input type         = "email" class="form-control" n name="email" id="inputEmail4" placeholder="Email">
+            <input type         = "email" class="form-control"  name="email_pelapor" id="inputEmail4" placeholder="Email">
           </div>
           <div class            = "form-group col-md-6">
             <label for          = "inputPassword4">No.Tlpn</label>
-            <input type         = "text" class="form-control" name="nohp" id="inputPassword4" placeholder="No.tlpn">
+            <input type         = "text" class="form-control" name="nohp_pelapor"  placeholder="No.tlpn">
           </div>
-        </div>
+        </div> -->
         <!-- <div class              = "form-group">
           <label for            = "inputAddress">Judul Aspirasi</label>
           <input type           = "text" class="form-control" name="judul_aspirasi" id="inputAddress" placeholder="Judul Aspirasi Anda">
@@ -42,7 +42,7 @@
             </select>
 
           </div> -->
-          <div class            = "form-group col-md-6">
+          <!-- <div class            = "form-group col-md-6">
             <label for          = "name">Kategori Pelapor</label>
             <select name        = 'kat_pelapor' class="form-control" name="kat_pelapor" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
               <option value     = 'Dosen PCR'>Dosen PCR</option>
@@ -53,7 +53,7 @@
               <option value     = 'Umum'>Umum</option>
             </select>
             </select>
-          </div>
+          </div> -->
 
         </div>
 <!-- 
@@ -75,9 +75,13 @@
 
       </form>
     </div>
-
+                <a href="show">Show</a>
   </div>
 
   </div>
   
-</section><!-- End Contact Section -->
+</section><!-- End Contact Section -->s
+
+
+
+ 

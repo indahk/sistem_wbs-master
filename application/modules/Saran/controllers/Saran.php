@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Log extends MX_Controller{
+class Pelapor extends MX_Controller{
  
 	function __construct() 
 	{

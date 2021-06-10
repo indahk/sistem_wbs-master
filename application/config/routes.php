@@ -51,7 +51,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 //$route['default_controller'] = 'dashboard/DashboardController';
 //$route['default_controller'] = 'dashboard1/DashboardController1';
-$route['default_controller'] = 'Beranda';
+// $route['default_controller'] = 'Beranda';
+$route['default_controller'] = 'Bagian';
 // $route['default_controller'] = 'auth/Google_login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
