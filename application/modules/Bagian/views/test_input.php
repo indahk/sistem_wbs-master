@@ -75,7 +75,7 @@
 
       </form>
     </div>
-                <a href="show">Show</a>
+                <a href="bagian/show">Show</a>
   </div>
 
   </div>

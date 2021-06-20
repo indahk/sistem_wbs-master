@@ -1,59 +1,80 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Bagian extends MX_Controller{
- 
-	function __construct() 
-	{
-		parent::__construct();
-		$this->load->helper('url');
-		$this->load->model('Md_bagian');
+class Bagian extends MX_Controller
+{
 
 
-	}
-
-	public function index()
+    function __construct()
     {
-        $this->load->view('bagian/test_input');
-        
+        parent::__construct();
+        $this->load->helper('url');
+        $this->load->model('Md_bagian');
     }
 
-
-	public function get()
-	{
-       
-	}
+    public function index()
+    {
+        $this->load->view('bagian/test_input');
+    }
 
     public function show()
     {
-        $data['result'] = $this->Md_bagian->getAll();
-        return $data;
-        // var_dump($result);
-       $this->load->view('bagian/test_output',$data);
-        
+        $result['data'] = $this->Md_bagian->getAll();
+        $this->load->view('bagian/test_output', $result);
     }
 
 
-	public function add(){
-		$this->Md_bagian->add();
+    public function add()
+    {
+        $nama = $this->input->post('nama_bagian');
+        $data = array(
+            'nama_bagian' => $nama
+        );
+
+        $this->Md_bagian->add($data);
         $this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil Ditambahkan!</div>');
-        redirect('Bagian/index');
+        redirect('Bagian/show');
+    }
+
+    function update()
+    { 
+        $id_bagian = $this->input->post('id_bagian');
+        $nama = $this->input->post('nama_bagian');
+        $data = array(
+                'nama_bagian' => $nama );
+        $where = array('id_bagian' => $id_bagian);
+
+       
         
-	}
+        //
+        // 
+        // );
 
-    public function delete(){
-		$this->Md_->delete();
+        // $where = array('id_bagian' => $id);
 
-		$id             = $this->input->post('id_');
-        $where    = array('id_' => $id);
-        $this->Md_->delete($where, 'tb_', $id);
-        $this->session->set_flashdata('message', '<div class="alert alert-danger">Data Berhasil Dihapus!</div>');
-        redirect('//show');
-    } 
+        $this->Md_bagian->update_data($where,$data);
+
+        redirect('bagian/show');
+    }
+
+    public function edit($id_bagian)
+    {
+        $where = array('id_bagian' => $id_bagian);
+
+        $data['bagian'] = $this->Md_bagian->edit_data($where, 'tb_bagian')->result();
+
+        $this->load->view('v_edit', $data);
+    }
+
+    public function delete($id_bagian)
+    {
+
+        $where = array('id_bagian' => $id_bagian);
+
+        $this->Md_bagian->delete($where, 'tb_bagian');
 
 
 
-
-
-	
+        redirect('Bagian/');
+    }
 }
