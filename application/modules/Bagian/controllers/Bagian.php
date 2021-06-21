@@ -19,9 +19,18 @@ class Bagian extends MX_Controller
 
     public function show()
     {
-        Modules::load('dashboard');
+        modules::load('Dashboard');
+        
         $result['data'] = $this->Md_bagian->getAll();
-        $this->load->view('Dashboard/daftarBagian', $result);
+        $data['title'] = 'Data Bagian';
+
+        $this->load->view('dashboard/template/include_headerdata', $data);
+		$this->load->view('dashboard/template/include_navbar');
+		$this->load->view('dashboard/template/include_sidebar');
+		$this->load->view('dashboard/pages/daftarBagian',$result);
+		$this->load->view('dashboard/template/include_footerdata');
+
+        
     }
 
 
@@ -29,7 +38,8 @@ class Bagian extends MX_Controller
     {
         $nama = $this->input->post('nama_bagian');
         $data = array(
-         );
+            'nama_bagian' => $nama
+        );
 
         $this->Md_bagian->add($data);
         $this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil Ditambahkan!</div>');
@@ -75,6 +85,6 @@ class Bagian extends MX_Controller
 
 
 
-        redirect('Bagian/');
+        redirect('Bagian/show');
     }
 }

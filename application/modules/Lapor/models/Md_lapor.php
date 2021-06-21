@@ -29,7 +29,9 @@ class Md_lapor extends MX_Controller
 
     public function getAll()
     {
-       
+        $query = $this->db->query('select * from vw_lapor '); //mendapatkan seluruh data di tb_aspirasi
+
+        return $query->result(); //mengembalikan nilai berupa array
     }
 
     public function getBySaranId()

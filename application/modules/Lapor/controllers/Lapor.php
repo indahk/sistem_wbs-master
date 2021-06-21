@@ -2,7 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 
-class Md_lapor extends MX_Controller
+class Lapor extends MX_Controller
 {
     function __construct() 
 	{
@@ -53,6 +53,21 @@ class Md_lapor extends MX_Controller
     public function getLapor(){
         
     }
+
+    public function show()
+	{
+		$data['result'] = $this->Md_lapor->getAll();
+		$data['title'] = 'Data Lapor';
+
+		modules::load('Dashboard');
+
+		//echo "Alhamdullillah Bisa";
+		$this->load->view('dashboard/template/include_headerdata', $data);
+		$this->load->view('dashboard/template/include_navbar');
+		$this->load->view('dashboard/template/include_sidebar');
+		$this->load->view('dashboard/pages/dataLapor', $data);
+		$this->load->view('dashboard/template/include_footerdata');
+	}
 
 	
 }

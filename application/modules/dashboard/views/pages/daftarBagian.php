@@ -33,7 +33,13 @@
                                         <i class="far fa-calendar-alt"></i> Date range picker
                                         <i class="fas fa-caret-down"></i>
                                     </button>
+                                    <button type="button" class="btn btn-info" id="  -btn">
+                                        <i class="far fa-add"></i> Add
+                                        <a href="<?= base_url('Bagian/add') ?>">e</a>
+                                    </button>
                                 </div>
+
+                             
                             </div>
                             <!-- /.form group -->
                             <!-- <h3 class="card-title">DataTable with minimal features & hover style</h3> -->
@@ -50,27 +56,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($result as $bagian) { ?>
+                                    <?php foreach ($data as $bagian) { ?>
                                         <tr>
                                             <td><?= $bagian->id_bagian ?></td>
                                             <td><?php echo ($bagian->nama_bagian) ?></td>
-                                            <td><?php echo ($bagian->created_bagian) ?></td>
+                                            <td><?php echo ($bagian->created_at) ?></td>
                                             <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-info">Action</button>
-                                                    <div class="btn-group">
-                                                        <button type="button" class="btn btn-info dropdown-toggle dropdown-hover dropdown-icon" data-toggle="dropdown">
-                                                            <span class="sr-only">Toggle Dropdown</span>
-                                                        </button>
-                                                        <div class="dropdown-menu" role="menu">
-                                                            <a class="dropdown-item" href="<?= base_url('Aspirasi/showAspirasi/' . $aspirasi->id_masukan) ?>">Detail</a>
-                                                            <a class="dropdown-item" href="<?= base_url('') ?>#">Edit</a>
-                                                            <a class="dropdown-item" href="<?= base_url('') ?>#">Something else here</a>
-                                                            <div class="dropdown-divider"></div>
-                                                            <a class="dropdown-item" href="<?= base_url('') ?>#">Separated link</a>
-                                                        </div>
-                                                    </div>
-
+                                                <div class="btn-group btn-group-sm">
+                                                    <a href="#" class="btn btn-info"><i class="fas fa-edit"></i></a>
+                                                    <a href="<?= base_url('Bagian/delete/' . $bagian->id_bagian); ?>" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -79,11 +73,9 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>ID_Aspirasi</th>
-                                        <th>Judul_Aspirasi</th>
-                                        <th>Isi_Aspirasi</th>
-                                        <th>Tanggal</th>
-                                        <th>Status</th>
+                                        <th>ID_Bagian</th>
+                                        <th>Nama Bagian</th>
+                                        <th>Created Bagian</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </tfoot>
@@ -95,7 +87,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Data Aspirasi</h3>
+                            <h3 class="card-title">Data Bagian</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -105,17 +97,17 @@
                                         <th>ID_Bagian</th>
                                         <th>Nama Bagian</th>
                                         <th>Created Bagian</th>
-                                        <th>Aksi</th>
+
 
                                     </tr>
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach ($result as $bagian) { ?>
+                                    <?php foreach ($data as $bagian) { ?>
                                         <tr>
                                             <td><?= $bagian->id_bagian ?></td>
                                             <td><?php echo ($bagian->nama_bagian) ?></td>
-                                            <td><?php echo ($bagian->created_bagian) ?></td>
+                                            <td><?php echo ($bagian->created_at) ?></td>
 
                                         <?php } ?>
 
@@ -124,10 +116,10 @@
 
                                 <tfoot>
                                     <tr>
-                                    <th>ID_Bagian</th>
+                                        <th>ID_Bagian</th>
                                         <th>Nama Bagian</th>
                                         <th>Created Bagian</th>
-                                        <th>Aksi</th>
+
                                     </tr>
                                 </tfoot>
                             </table>
