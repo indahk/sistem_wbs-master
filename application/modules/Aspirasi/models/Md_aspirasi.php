@@ -26,50 +26,54 @@ class Md_Aspirasi extends MX_Controller
         $this->db->where("id_masukan", $id);
         return $data_aspirasi = $this->db->get()->result_array(); //mengembalikan nilai berupa array
     }
-    // private function do_lampiran()
-    // {
-    //     $lampiran = $_FILES['lampiran_aspirasi'];
-    //     if ($lampiran = null) {
-    //         echo "nill";
-    //     } else {
-    //         $config['upload_path']          = './assets/document/aspirasi/';
-    //         $config['allowed_types']        = 'pdf|docs';
-    //         $this->upload->initialize($config);
-    //         if (!$this->upload->do_upload('lampiran_aspirasi')) {
-    //             echo "gagal upload";
-    //             die();
-    //         } else {
-    //             $lampiran = $this->upload->data('file_name');
-    //             return $lampiran;
-    //         }
-    //     }
-    // }
-    // private function _deleteLampiran($id)
-    // {
-    //     $lampiran = $this->getAspirasi($id);
-    //     $lamp = $lampiran[0];
-    //     var_dump($prd);
-    //     if ($lamp['lampiran'] != null) {
-    //         $filename = explode(".", $lamp['lampiran'])[0];
-    //         return array_map('unlink', glob(FCPATH . "assets/document/aspirasi/$filename.*"));
-    //     }
-    // }
+    private function do_lampiran()
+    {
+        $lampiran = $_FILES['lampiran_aspirasi'];
+        if ($lampiran = null) {
+            echo "nill";
+        } else {
+            $config['upload_path']          = './assets/document/aspirasi/';
+            $config['allowed_types']        = 'pdf|docs';
+            $this->upload->initialize($config);
+            if (!$this->upload->do_upload('lampiran_aspirasi')) {
+                echo "gagal upload";
+                die();
+            } else {
+                $lampiran = $this->upload->data('file_name');
+                return $lampiran;
+            }
+        }
+    }
+    private function _deleteLampiran($id)
+    {
+        $lampiran = $this->getAspirasi($id);
+        $lamp = $lampiran[0];
+        var_dump($lamp);
+        if ($lamp['lampiran'] != null) {
+            $filename = explode(".", $lamp['lampiran'])[0];
+            return array_map('unlink', glob(FCPATH . "assets/document/aspirasi/$filename.*"));
+        }
+    }
     public function addAspirasi()
     {
-        $nama=$this->input->post('nama');
-        $email=$this->input->post('email');
-        $notlpn=$this->input->post('nohp');
-        $kt_aspirasi=$this->input->post('kt_aspirasi');
-        // $kt_pelapor->$this->input->post('kt_pelapor');
+        $jenis = 3;
+        $id_ktg=$this->input->post('id_ktg');
         $judul = $this->input->post('judul_aspirasi');
-        $isi = $this->input->post('isi_aspirasi');
-        $lampiran = $this->input->post('lampiran');
-        $data = array(
-            'judul_aspirasi' => $judul,
-            'isi_aspirasi' => $isi,
-            'lampiran_aspirasi' => $this->do_upload()         
-        );
-        $this->db->insert('vw_aspirasi', $data);
+		$ktg = $this->input->post('id_ktg');
+		$isi = $this->input->post('isi_aspirasi');
+		
+
+
+		$data= array(
+            'id_ktg'=>$id_ktg,
+            'id_jenis'=>$jenis,
+			'judul_masukan'=>$judul,
+			'ktg_masukan'=>$ktg,
+			'isi_masukan'=>$isi,
+            'lampiran'=>$this->do_upload()
+			
+		);
+        $this->db->insert('tb_masukan', $data);
     }
     // 
     // public function editAspirasi()

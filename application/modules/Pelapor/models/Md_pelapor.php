@@ -32,7 +32,7 @@ class Md_pelapor extends MX_Controller
     {
 
         $nama=$this->input->post('nama_pelapor');
-        $ktg=$this->input->post('kat_pelapor');
+        $ktg=$this->input->post('ktg_pelapor');
         $email=$this->input->post('email_pelapor');
         $nohp=$this->input->post('nohp_pelapor');
         $kode=$this->generate_kode();

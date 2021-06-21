@@ -28,18 +28,22 @@
                             <div class="form-group">
                                 <label>Date range button:</label>
 
-                                <div class="input-group">
-                                    <button type="button" class="btn btn-default float-right" id="daterange-btn">
+                                <div class="text-left">
+                                    <button type="button" class="btn btn-default float-left" id="daterange-btn">
                                         <i class="far fa-calendar-alt"></i> Date range picker
                                         <i class="fas fa-caret-down"></i>
                                     </button>
+
+                                </div>
+                                <div class="text-right">
                                     <button type="button" class="btn btn-info" id="  -btn">
                                         <i class="fas fa-plus"></i> Add
                                         <a href="<?= base_url('Bagian/add') ?>"></a>
                                     </button>
+
                                 </div>
 
-                             
+
                             </div>
                             <!-- /.form group -->
                             <!-- <h3 class="card-title">DataTable with minimal features & hover style</h3> -->

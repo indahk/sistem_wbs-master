@@ -178,17 +178,17 @@
           </li>
           <li class="nav-item">
             <a href="<?= base_url('') ?>#" class="nav-link">
-              <i class="nav-icon far fa-envelope"></i>
+              <i class="nav-icon far fa-user"></i>
               <p>
-                Mailbox
+                User
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?= base_url('') ?>pages/mailbox/mailbox.html" class="nav-link">
+                <a href="<?= base_url('User/show') ?>l" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Inbox</p>
+                  <p>Daftar User</p>
                 </a>
               </li>
               <li class="nav-item">

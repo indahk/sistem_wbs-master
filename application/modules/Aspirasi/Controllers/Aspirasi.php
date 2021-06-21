@@ -47,42 +47,13 @@ class Aspirasi extends MX_Controller
 	public function addAspirasi()
 	{	
 
-		// // modules::load('Beranda');
-		// modules::run('Pelapor');
+		modules::load('Beranda');
+		modules::run('Pelapor');
 
-		// $this->Md_pelapor->add();
+		$this->Md_pelapor->add();
 
-		// $this->Md_aspirasi->add();
-
-		
-		// $nama = $this->input->post('nama_pelapor');
-		// $ktg_pelapor = $this->input->post('ktg_pelapor');
-		// $email = $this->input->post('email_pelapor');
-		// $hp = $this->input->post('nohp_pelapor');
-		
-		
-		// $data1 = array(
-		// 	'nama_pelapor' => $nama,
-		// 	'$ktg_pelapor' => $ktg_pelapor,
-		// 	'email_pelapor' => $email,
-		// 	'nohp_pelapor' => $hp
-			
-		// );
-
-		// $this->Md_pelapor->add($data1);
-
-		// $judul = $this->input->post('judul_aspirasi');
-		// $ktg = $this->input->post('ktg_aspirasi');
-		// $isi = $this->input->post('isi_aspirasi');
-		// $lampiran = $this->input->post('lampiran');
-
-
-
-		// $data=$this->load->pelapor->add();
-
-
-		// $this->Md_aspirasi->addAspirasi();
-		// $this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil Ditambahkan!</div>');
+		$this->Md_aspirasi->addAspirasi();
+		$this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil Ditambahkan!</div>');
 		redirect('Aspirasi/showAspirasi');
 	}
 
