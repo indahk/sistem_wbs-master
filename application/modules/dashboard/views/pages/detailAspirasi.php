@@ -61,15 +61,12 @@
                 <?php } ?>
               </div>
               </div>
-              <div class="form-group">
-                <label for="outputtDescription">Tanggal Kirim</label>
-                <textarea id="outputtDescription" class="form-control" rows="4">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terr.</textarea>
-              </div>
+           
               <div class="form-group col-md-6">
                 <label for="inputStatus">Status</label>
                 <select id="inputStatus" class="form-control custom-select">
-                  <option disabled>Select one</option>
-                  <option>On Hold</option>
+                  <option disabled>Diproses</option>
+                  <option>Menunggu</option>
                   <option>Canceled</option>
                   <option selected>Success</option>
                 </select>
@@ -84,7 +81,7 @@
         <div class="col-md-12">
           <div class="card card-secondary">
             <div class="card-header">
-              <h3 class="card-title">Budget</h3>
+              <h3 class="card-title">Teruskan</h3>
 
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -94,7 +91,7 @@
             </div>
             <div class="card-body">
               <div class="form-group">
-                <label for="inputEstimatedBudget">Estimated budget</label>
+                <label for="inputEstimatedBudget">Bagian</label>
                 <input type="number" id="inputEstimatedBudget" class="form-control" value="2300" step="1">
               </div>
               <div class="form-group">

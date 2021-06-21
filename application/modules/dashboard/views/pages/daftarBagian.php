@@ -34,8 +34,8 @@
                                         <i class="fas fa-caret-down"></i>
                                     </button>
                                     <button type="button" class="btn btn-info" id="  -btn">
-                                        <i class="far fa-add"></i> Add
-                                        <a href="<?= base_url('Bagian/add') ?>">e</a>
+                                        <i class="fas fa-plus"></i> Add
+                                        <a href="<?= base_url('Bagian/add') ?>"></a>
                                     </button>
                                 </div>
 

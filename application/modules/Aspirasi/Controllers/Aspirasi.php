@@ -47,12 +47,12 @@ class Aspirasi extends MX_Controller
 	public function addAspirasi()
 	{	
 
-		// modules::load('Beranda');
-		modules::run('Pelapor');
+		// // modules::load('Beranda');
+		// modules::run('Pelapor');
 
-		$this->Md_pelapor->add();
+		// $this->Md_pelapor->add();
 
-		$this->Md_aspirasi->add();
+		// $this->Md_aspirasi->add();
 
 		
 		// $nama = $this->input->post('nama_pelapor');
