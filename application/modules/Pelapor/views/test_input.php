@@ -11,7 +11,7 @@
     </div>
 
     <div class                  = "col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch">
-      <form action              = "bagian/add" method="post" role="form" class="php-email-form">
+      <form action              = "Pelapor/add" method="post" role="form" class="php-email-form">
         <div class              = "form-group">
           <label for            = "inputAddress">Nama Pelapor</label>
           <input type           = "text" class="form-control" name="nama_pelapor" id="inputAddress" placeholder="Nama Anda">

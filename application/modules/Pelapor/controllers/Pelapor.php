@@ -23,21 +23,39 @@ class Pelapor extends MX_Controller{
 		
 	}
 
+	public function show()
+	{
+		$data['result'] = $this->Md_pelapor->allPelapor();
+		$data['title'] = 'Data Aspirasi';
+
+		modules::load('Dashboard');
+
+		//echo "Alhamdullillah Bisa";
+		$this->load->view('dashboard/template/include_headerdata', $data);
+		$this->load->view('dashboard/template/include_navbar');
+		$this->load->view('dashboard/template/include_sidebar');
+		$this->load->view('dashboard/pages/dataPelapor', $data);
+		$this->load->view('dashboard/template/include_footerdata');
+
+	}
 
 	public function add(){
 
 		
 		$this->Md_pelapor->add();
         $this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil Ditambahkan!</div>');
-        redirect('/Aspirasi/showAspirasi');
+        redirect('Pelapor/show');
 	}
 
-    public function delete(){
-		$id             = $this->input->post('id_pelapor');
-        $where    = array('id_' => $id);
-        $this->Md_->delete($where, 'tb_', $id);
-        $this->session->set_flashdata('message', '<div class="alert alert-danger">Data Berhasil Dihapus!</div>');
-        redirect('//show');
+    public function delete($id_pelapor)
+	{	
+		$where = array('id_pelapor' => $id_pelapor);
+
+        $this->Md_pelapor->delete($where, 'tb_pelapor');
+
+
+
+        redirect('Pelapor/show');
     }
 
 	public function detail($id_pelapor)

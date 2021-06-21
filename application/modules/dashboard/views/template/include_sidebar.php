@@ -67,7 +67,7 @@
 
           </li>
           <li class="nav-item">
-            <a href="<?= base_url('Dashboard/dataLapor') ?>" class="nav-link">
+            <a href="<?= base_url('Pelapor/show') ?>" class="nav-link">
               <i class="nav-icon far fa-envelope"></i>
               <p>
                 Pelaporan Pelanggaran
@@ -77,7 +77,7 @@
 
           </li>
           <li class="nav-item">
-            <a href="<?= base_url('Dashboard/dataPermintaan') ?>" class="nav-link">
+            <a href="<?= base_url('Pelaporan/show') ?>" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Permintaan Informasi
@@ -122,14 +122,14 @@
             </ul>
           </li> -->
           <li class="nav-item">
-            <a href="<?= base_url('') ?>#" class="nav-link">
+            <a href="<?= base_url('Pelapor/show') ?>#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Tables
-                <i class="fas fa-angle-left right"></i>
+                Pelapor
+                <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
-            <ul class="nav nav-treeview">
+            <!-- <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="<?= base_url('') ?>pages/tables/simple.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -148,10 +148,10 @@
                   <p>jsGrid</p>
                 </a>
               </li>
-            </ul>
+            </ul> -->
           </li>
           <li class="nav-header">Manage Data</li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="<?= base_url('') ?>pages/calendar.html" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
@@ -167,12 +167,12 @@
                 Gallery
               </p>
             </a>
-          </li>
+          </li> -->
           <li class="nav-item">
-            <a href="<?= base_url('') ?>pages/kanban.html" class="nav-link">
+            <a href="<?= base_url('Bagian/show') ?>" class="nav-link">
               <i class="nav-icon fas fa-columns"></i>
               <p>
-                Kanban Board
+                Bagian 
               </p>
             </a>
           </li>

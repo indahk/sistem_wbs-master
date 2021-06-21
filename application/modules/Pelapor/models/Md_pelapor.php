@@ -61,13 +61,17 @@ class Md_pelapor extends MX_Controller
     }
 
 
-    public function getAll($id_pelapor)
+    public function allPelapor()
     {
-        $this->db->distinct();
-        $this->db->select("*");
-        $this->db->from("tb_pelapor");
-        $this->db->where("id_pelapor", $id_pelapor);
-        return $data_pelapor = $this->db->get()->result_array();
+
+        $query = $this->db->query('select * from tb_pelapor '); //mendapatkan seluruh data di tb_aspirasi
+        return $query->result(); 
+
+        // $this->db->distinct();
+        // $this->db->select("*");
+        // $this->db->from("tb_pelapor");
+        // $this->db->where("id_pelapor", $id_pelapor);
+        // return $data_pelapor = $this->db->get()->result_array();
     }
 
     public function getById($where,$table)

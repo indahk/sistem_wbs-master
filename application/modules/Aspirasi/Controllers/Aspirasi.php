@@ -45,7 +45,9 @@ class Aspirasi extends MX_Controller
 
 
 	public function addAspirasi()
-	{
+	{	
+
+		// modules::load('Beranda');
 		modules::run('Pelapor');
 
 		$this->Md_pelapor->add();
@@ -81,7 +83,7 @@ class Aspirasi extends MX_Controller
 
 		// $this->Md_aspirasi->addAspirasi();
 		// $this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil Ditambahkan!</div>');
-		// redirect('/Aspirasi/showAspirasi');
+		redirect('Aspirasi/showAspirasi');
 	}
 
 	public function deleteAspirasi()
