@@ -11,7 +11,7 @@
     </div>
 
     <div class                  = "col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch">
-      <form action              = "bagian/add" method="post" role="form" class="php-email-form">
+      <form action              = "<?= base_url('Pelapor/add') ?>" method="post" role="form" class="php-email-form">
         <div class              = "form-group">
           <label for            = "inputAddress">Nama Pelapor</label>
           <input type           = "text" class="form-control" name="nama_pelapor" id="inputAddress" placeholder="Nama Anda">
@@ -26,13 +26,13 @@
             <input type         = "text" class="form-control" name="nohp_pelapor"  placeholder="No.tlpn">
           </div>
         </div> 
-        <div class              = "form-group">
+        <!-- <div class              = "form-group">
           <label for            = "inputAddress">Judul Aspirasi</label>
           <input type           = "text" class="form-control" name="judul_aspirasi" id="inputAddress" placeholder="Judul Aspirasi Anda">
-        </div> 
+        </div>  -->
  
         <div class              = "form-row">
-          <div class            = "form-group col-md-6">
+          <!-- <div class            = "form-group col-md-6">
             <label for          = "name">Kategori Aspirasi</label>
 
             <select name        = 'kat_masukan' class="form-control" name="kat_aspirasi" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
@@ -41,10 +41,10 @@
               <?php } ?>
             </select>
 
-          </div> 
+          </div>  -->
            <div class            = "form-group col-md-6">
             <label for          = "name">Kategori Pelapor</label>
-            <select name        = 'kat_pelapor' class="form-control" name="kat_pelapor" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+            <select name        = 'ktg_pelapor' class="form-control" name="ktg_pelapor" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
               <option value     = 'Dosen PCR'>Dosen PCR</option>
               <option value     = 'Tendik PCR'>Tendik PCR</option>
               <option value     = 'Mahasiswa PCR'>Mahasiswa PCR</option>
@@ -53,34 +53,34 @@
               <option value     = 'Umum'>Umum</option>
             </select>
             </select>
-          </div> -->
+          </div> 
 
         </div>
  
-        <div class              = "form-group">
+        <!-- <div class              = "form-group">
           <label for            = "name">Isi Aspirasi</label>
           <textarea class       = "form-control" name="isi_aspirasi" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
           <div class            = "validate"></div>
-        </div>
+        </div> -->
 
-        <div class              = "form-row">
+        <!-- <div class              = "form-row">
           <div class            = "form-group col-md-6">
             <label for          = "name">Lampiran</label>
             <input type         = "file" class="form-control" name="lampiran" id="isi_aspirasi" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
             <div class          = "validate"></div>
           </div>
-        </div> -->
+        </div>  -->
         <button type = "submit" class="btn btn-primary">Kirim</button>
 
 
       </form>
     </div>
-                <a href="bagian/show">Show</a>
+                <!-- <a href="bagian/show">Show</a> -->
   </div>
 
   </div>
   
-</section><!-- End Contact Section -->s
+</section><!-- End Contact Section -->
 
 
 
