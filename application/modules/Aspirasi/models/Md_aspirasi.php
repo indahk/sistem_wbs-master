@@ -32,7 +32,7 @@ class Md_Aspirasi extends MX_Controller
     //     if ($lampiran = null) {
     //         echo "nill";
     //     } else {
-    //         $config['upload_path']          = './assets/img/pupuk/';
+    //         $config['upload_path']          = './assets/document/aspirasi/';
     //         $config['allowed_types']        = 'pdf|docs';
     //         $this->upload->initialize($config);
     //         if (!$this->upload->do_upload('lampiran_aspirasi')) {
@@ -46,12 +46,12 @@ class Md_Aspirasi extends MX_Controller
     // }
     // private function _deleteLampiran($id)
     // {
-    //     $product = $this->getAspirasi($id);
-    //     $prd = $product[0];
+    //     $lampiran = $this->getAspirasi($id);
+    //     $lamp = $lampiran[0];
     //     var_dump($prd);
-    //     if ($prd['foto_pupuk'] != null) {
-    //         $filename = explode(".", $prd['foto_pupuk'])[0];
-    //         return array_map('unlink', glob(FCPATH . "assets/img/pupuk/$filename.*"));
+    //     if ($lamp['lampiran'] != null) {
+    //         $filename = explode(".", $lamp['lampiran'])[0];
+    //         return array_map('unlink', glob(FCPATH . "assets/document/aspirasi/$filename.*"));
     //     }
     // }
     public function addAspirasi()
@@ -71,12 +71,7 @@ class Md_Aspirasi extends MX_Controller
         );
         $this->db->insert('vw_aspirasi', $data);
     }
-    // function deleteAspirasi($where, $table, $id)
-    // { //method hapus data
-    //     var_dump($this->_deleteImage($id));
-    //     $this->db->where($where); //id data
-    //     $this->db->delete($table); //table apa
-    // }
+    // 
     // public function editAspirasi()
     // {
     //     $lampiran = $_FILES['lampiran_aspirasi'];
@@ -85,8 +80,8 @@ class Md_Aspirasi extends MX_Controller
     //         $this->_deleteImage($id);
     //         $judul = $this->input->post('judul_aspirasi');
     //         $isi = $this->input->post('isi_aspirasi');
-    //         $jumlah = $this->input->post('pupuk_jumlah');
-    //         $deskripsi = $this->input->post('pupuk_deskripsi');
+    //         $jumlah = $this->input->post('aspirasi_jumlah');
+    //         $deskripsi = $this->input->post('aspirasi_deskripsi');
     //         $data = array(
     //             'judul_aspirasi' => $judul,
     //             'isi_aspirasi' => $isi,
@@ -98,7 +93,7 @@ class Md_Aspirasi extends MX_Controller
     //         $id = $this->input->post('id_aspirasi');
     //         $judul = $this->input->post('judul_aspirasi');
     //         $isi = $this->input->post('isi_aspirasi');
-    //         $lampiran = $this->input->post('pupuk_jumlah');
+    //         $lampiran = $this->input->post('aspirasi_jumlah');
     //         $data = array(
     //             'judul_aspirasi' => $judul,
     //             'isi_aspirasi' => $isi,
@@ -116,7 +111,7 @@ class Md_Aspirasi extends MX_Controller
             echo "nill";
         } else {
             $config['upload_path']          = './assets/lampiranFile/';
-            $config['allowed_types']        = 'pdf|xls|jpg|png|jpeg';
+            $config['allowed_types']        = 'pdf|xls|jpg|png|jpeg|docs|xlsx';
             $this->upload->initialize($config);
             if (!$this->upload->do_upload('lampiran')) {
                 echo "gagal upload";
@@ -126,5 +121,10 @@ class Md_Aspirasi extends MX_Controller
                 return $lampiran;
             }
         }
+    }
+
+    public function getById($where,$table)
+    {
+        return $this->db->get_where($table, $where);
     }
 }

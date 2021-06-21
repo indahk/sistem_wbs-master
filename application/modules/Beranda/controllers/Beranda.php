@@ -16,7 +16,7 @@ class Beranda extends MX_Controller{
     public function index()
 	{   
 	//	$this->load->view('templates/header');
-	//	$this->load->view('templates/hero_section');
+	//	$this->load->view('templates/hero_section');   
 	//	$this->load->view('pages/aspirasi');
 	//	$this->load->view('templates/footer');
 	//  echo 'Hai ini adalah halaman aspirasi';

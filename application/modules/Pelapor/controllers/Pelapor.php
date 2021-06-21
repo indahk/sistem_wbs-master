@@ -25,20 +25,26 @@ class Pelapor extends MX_Controller{
 
 
 	public function add(){
+
+		
 		$this->Md_pelapor->add();
         $this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil Ditambahkan!</div>');
         redirect('/Aspirasi/showAspirasi');
 	}
 
     public function delete(){
-		$this->Md_->delete();
-
-		$id             = $this->input->post('id_');
+		$id             = $this->input->post('id_pelapor');
         $where    = array('id_' => $id);
         $this->Md_->delete($where, 'tb_', $id);
         $this->session->set_flashdata('message', '<div class="alert alert-danger">Data Berhasil Dihapus!</div>');
         redirect('//show');
     }
+
+	public function detail($id_pelapor)
+	{
+		$where = array('id_pelapor' => $id_pelapor);
+		$data['pelapor'] = $this->Md_pelapor->getById($where, 'tb_pelapor')->result();
+	}
 
 
 

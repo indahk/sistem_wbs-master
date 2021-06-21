@@ -7,11 +7,11 @@
 
 
 
-      <p>Form Aspirasi</p>
+      <p>Form Pelapor</p>
     </div>
 
     <div class                  = "col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch">
-      <form action              = "pelapor/add" method="post" role="form" class="php-email-form">
+      <form action              = "bagian/add" method="post" role="form" class="php-email-form">
         <div class              = "form-group">
           <label for            = "inputAddress">Nama Pelapor</label>
           <input type           = "text" class="form-control" name="nama_pelapor" id="inputAddress" placeholder="Nama Anda">
@@ -35,11 +35,7 @@
           <div class            = "form-group col-md-6">
             <label for          = "name">Kategori Aspirasi</label>
 
-            <select name        = 'kat_masukan' class="form-control" name="kat_aspirasi" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
-              <?php foreach ($data as $kat_masukan) { ?>
-                <option value   = "<?php echo $kat_masukan['id_ktgmasukan']; ?>"><?php echo $kat_masukan['nama_ktgmasukan']; ?> </option>
-              <?php } ?>
-            </select>
+           
 
           </div> -->
           <div class            = "form-group col-md-6">
@@ -75,9 +71,13 @@
 
       </form>
     </div>
-
+                <a href="bagian/show">Show</a>
   </div>
 
   </div>
   
 </section><!-- End Contact Section -->s
+
+
+
+ 

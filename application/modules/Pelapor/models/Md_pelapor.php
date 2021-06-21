@@ -55,20 +55,24 @@ class Md_pelapor extends MX_Controller
 
     }
 
-    public function delete()
+    public function delete($where,$table)
     {
-
+        return $this->db->delete($table,$where);
     }
 
 
-    public function getAll()
+    public function getAll($id_pelapor)
     {
-       
+        $this->db->distinct();
+        $this->db->select("*");
+        $this->db->from("tb_pelapor");
+        $this->db->where("id_pelapor", $id_pelapor);
+        return $data_pelapor = $this->db->get()->result_array();
     }
 
-    public function getBySaranId()
+    public function getById($where,$table)
     {
-
+        return $this->db->get_where($table, $where);
     }
 
     public function getByWhere($where,$data)
