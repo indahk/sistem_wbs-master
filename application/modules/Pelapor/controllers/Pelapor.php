@@ -64,6 +64,8 @@ class Pelapor extends MX_Controller{
 		$data['pelapor'] = $this->Md_pelapor->getById($where, 'tb_pelapor')->result();
 	}
 
+	
+
 
 
 
