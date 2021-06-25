@@ -22,11 +22,11 @@ class Md_pelapor extends MX_Controller
     }
 
 
-    function generate_kode($len = 8){
-        $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        $password = substr( str_shuffle( $chars ), 0, $len );
-        return $password;
-       }
+    // function generate_kode($len = 8){
+    //     $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    //     $password = substr( str_shuffle( $chars ), 0, $len );
+    //     return $password;
+    //    }
 
     public function add()
     {

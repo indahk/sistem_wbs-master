@@ -12,6 +12,10 @@ class Permintaan extends MX_Controller{
 
 	public function index()
 	{   
+
+		$page_data['page_name']='Log Sistem';
+		$page_data['page_title'] ='Log Sistem';
+		$page_data['page_desc'] ='List log aktivitas pengguna';
         //	$this->load->view('templates/header');
         //	$this->load->view('templates/hero_section');
         //	$this->load->view('pages/aspirasi');

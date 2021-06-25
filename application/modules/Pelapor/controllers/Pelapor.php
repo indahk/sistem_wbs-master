@@ -43,7 +43,7 @@ class Pelapor extends MX_Controller{
 
 		
 		$this->Md_pelapor->add();
-        $this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil Ditambahkan!</div>');
+        // $this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil Ditambahkan!</div>');
         redirect('Pelapor/show');
 	}
 
@@ -64,7 +64,7 @@ class Pelapor extends MX_Controller{
 		$data['pelapor'] = $this->Md_pelapor->getById($where, 'tb_pelapor')->result();
 	}
 
-	
+
 
 
 

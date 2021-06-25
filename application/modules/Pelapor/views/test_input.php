@@ -40,7 +40,7 @@
           </div> -->
           <div class            = "form-group col-md-6">
             <label for          = "name">Kategori Pelapor</label>
-            <select name        = 'kat_pelapor' class="form-control" name="kat_pelapor" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+            <select name        = 'ktg_pelapor' class="form-control" name="ktg_pelapor" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
               <option value     = 'Dosen PCR'>Dosen PCR</option>
               <option value     = 'Tendik PCR'>Tendik PCR</option>
               <option value     = 'Mahasiswa PCR'>Mahasiswa PCR</option>

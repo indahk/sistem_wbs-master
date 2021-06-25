@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Log extends MX_Controller{
+class User extends MX_Controller{
  
 	function __construct() 
 	{
 		parent::__construct();
 		$this->load->helper('url');
-		$this->load->model('Md_log');
+		$this->load->model('Md_user');
 	}
 
 	public function index()
@@ -20,11 +20,44 @@ class Log extends MX_Controller{
 		$this->load->view('dashboard/template/include_header', $page_data);
 		$this->load->view('dashboard/template/include_navbar');
 		$this->load->view('dashboard/template/include_sidebar');
-		$this->load->view('dashboard/pages/log', $page_data);
+		$this->load->view('user', $page_data);
 		$this->load->view('dashboard/template/include_footer');
 
         
 	}
+
+    function show($param1,$param2)
+    {
+        
+    }
+
+    function add()
+    {
+
+    }
+
+    function get($param1,$param2)
+    {
+
+    }
+
+    function update()
+    {
+
+    }
+
+    function delete()
+    {
+
+    }
+
+    function pagination() 
+    {
+
+    }
+
+  
+
 
     // public function showSaran()
     // {
