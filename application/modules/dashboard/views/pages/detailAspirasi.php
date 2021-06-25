@@ -81,8 +81,11 @@
         <div class="col-md-4">
           <div class="card card-primary">
             <div class="card-header">
-            <i class="fas fa-id-badge md"></i>
-              <h3 class="card-title">Teruskan</h3>
+            
+              <h3 class="card-title">
+              <i class="fas fa-id-badge md"></i>
+              Teruskan
+              </h3>
 <!-- 
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">

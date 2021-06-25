@@ -68,7 +68,7 @@
                                             <td><?php echo ($bagian->created_at) ?></td>
                                             <td>
                                                 <div class="btn-group btn-group-sm">
-                                                    <a href="#" class="btn btn-info" data-toggle="modal" data-target="#modal-"><i class="fas fa-edit"></i></a>
+                                                    <a href="#" class="btn btn-info" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></a>
                                                     <a href="<?= base_url('Bagian/delete/' . $bagian->id_bagian); ?>" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger"><i class="fas fa-trash"></i></a>
                                                 </div>
                                             </td>
