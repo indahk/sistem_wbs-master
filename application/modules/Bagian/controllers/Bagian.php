@@ -14,23 +14,33 @@ class Bagian extends MX_Controller
 
     public function index()
     {
-        $this->load->view('bagian/test_input');
-    }
 
-    public function show()
-    {
+
+        $page_data['page_name']='Daftar Bagian';
+        $page_data['page_title']='Data Bagian';
+        $page_data['page_desc']='Halaman Daftar Bagian';
+
         modules::load('Dashboard');
         
         $result['data'] = $this->Md_bagian->getAll();
-        $data['title'] = 'Data Bagian';
+        // $data['title'] = 'Data Bagian';
 
-        $this->load->view('dashboard/template/include_headerdata', $data);
+        $this->load->view('dashboard/template/include_headerdata', $page_data);
 		$this->load->view('dashboard/template/include_navbar');
 		$this->load->view('dashboard/template/include_sidebar');
 		$this->load->view('dashboard/pages/daftarBagian',$result);
 		$this->load->view('dashboard/template/include_footerdata');
 
         
+
+        // $this->load->view('bagian/test_input');
+    }
+
+    public function show()
+    {
+        
+
+       
     }
 
 
@@ -83,7 +93,7 @@ class Bagian extends MX_Controller
 
         $this->Md_bagian->delete($where, 'tb_bagian');
 
-
+        
 
         redirect('Bagian/show');
     }

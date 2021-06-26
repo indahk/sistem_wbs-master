@@ -169,7 +169,7 @@
             </a>
           </li> -->
           <li class="nav-item">
-            <a href="<?= base_url('Bagian/show') ?>" class="nav-link">
+            <a href="<?= base_url('Bagian/') ?>" class="nav-link">
               <i class="nav-icon fas fa-columns"></i>
               <p>
                 Bagian 
