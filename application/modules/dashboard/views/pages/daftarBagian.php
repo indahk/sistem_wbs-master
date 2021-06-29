@@ -69,7 +69,7 @@
                                             <td>
                                                 <div class="btn-group btn-group-sm">
                                                     <a href="#" class="btn btn-info" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></a>
-                                                    <a href="<?= base_url('Bagian/delete/' . $bagian->id_bagian); ?>" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger"><i class="fas fa-trash"></i></a>
+                                                    <a href="<?= base_url('Bagian/delete/' . $bagian->id_bagian); ?>" class="btn btn-danger" ><i class="fas fa-trash"></i></a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -129,8 +129,8 @@
                                 </tfoot>
                             </table>
                         </div>
-                        <!-- /.card-body -->
-                </div> -->
+                        <!- /.card-body -->
+                </div> 
                 <!-- /.card -->
             </div>
             <!-- /.col -->
@@ -242,7 +242,7 @@
                 $.ajax({
                     url: "<?php echo site_url('user/reset'); ?>",
                     type: "POST",
-                    data: "id=" + id,
+                    data: "id_bagian=" + id_bagian,
                     cache: false,
                     dataType: 'json',
                     success: function(respone) {
@@ -271,7 +271,7 @@
         })
     }
     //view
-    function vuser(id) {
+    function vuser(id_bagian) {
         $('#form')[0].reset(); // reset form on modals
         $('.form-group').removeClass('has-error'); // clear error class
         $('.help-block').empty(); // clear error string
@@ -288,7 +288,7 @@
     }
 
     //delete
-    function deluser(id) {
+    function deluser(id_bagian) {
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -350,19 +350,19 @@
             dataType: "JSON",
             success: function(data) {
 
-                $('[name="id_user"]').val(data.id_user);
-                $('[name="username"]').val(data.username);
-                $('[name="full_name"]').val(data.full_name);
-                $('[name="is_active"]').val(data.is_active);
-                $('[name="level"]').val(data.id_level);
+                $('[name="id_bagian"]').val(data.id_bagian);
+                $('[name="nama_bagian"]').val(data.nama_bagian);
+                // $('[name="full_name"]').val(data.full_name);
+                // $('[name="is_active"]').val(data.is_active);
+                // $('[name="level"]').val(data.id_level);
 
-                if (data.image == null) {
-                    var image = "<?php echo base_url('assets/foto/user/default.png') ?>";
-                    $("#v_image").attr("src", image);
-                } else {
-                    var image = "<?php echo base_url('assets/foto/user/') ?>";
-                    $("#v_image").attr("src", image + data.image);
-                }
+                // if (data.image == null) {
+                //     var image = "<?php echo base_url('assets/foto/user/default.png') ?>";
+                //     $("#v_image").attr("src", image);
+                // } else {
+                //     var image = "<?php echo base_url('assets/foto/user/') ?>";
+                //     $("#v_image").attr("src", image + data.image);
+                // }
 
                 $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
                 $('.modal-title').text('Edit User'); // Set title to Bootstrap modal title
@@ -379,9 +379,9 @@
         $('#btnSave').attr('disabled', true); //set button disable 
         var url;
         if (save_method == 'add') {
-            url = "<?php echo site_url('user/insert') ?>";
+            url = "<?php echo site_url('Bagian/add') ?>";
         } else {
-            url = "<?php echo site_url('user/update') ?>";
+            url = "<?php echo site_url('Bagian/add') ?>";
         }
         var formdata = new FormData($('#form')[0]);
         $.ajax({
@@ -465,21 +465,21 @@
                                 <input type="text" class="form-control" name="username" id="username" placeholder="nama_bagian">
                             </div>
                         </div>
-                        <div class="form-group row ">
+                        <!-- <div class="form-group row ">
                             <label for="full_name" class="col-sm-3 col-form-label">Full Name</label>
                             <div class="col-sm-9 kosong">
                                 <input type="text" class="form-control" name="full_name" id="full_name" placeholder="Full Name">
                             </div>
-                        </div>
-
+                        </div> -->
+<!-- 
                         <div class="form-group row ">
                             <label for="password" class="col-sm-3 col-form-label">Password</label>
                             <div class="col-sm-9 kosong">
                                 <input type="password" class="form-control " name="password" id="password" placeholder="Password">
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="form-group row ">
+                        <!-- <div class="form-group row ">
                             <label for="is_active" class="col-sm-3 col-form-label">Is Active</label>
                             <div class="col-sm-9 kosong">
                                 <select class="form-control" name="is_active" id="is_active">
@@ -488,8 +488,8 @@
                                     <option value="N">N</option>
                                 </select>
                             </div>
-                        </div>
-                        <div class="form-group row ">
+                        </div> -->
+                        <!-- <div class="form-group row ">
                             <label for="level" class="col-sm-3 col-form-label">Level</label>
                             <div class="col-sm-9 kosong">
                                 <select class="form-control" name="level" id="level">
@@ -500,14 +500,14 @@
                                     <?php } ?>
                                 </select>
                             </div>
-                        </div>
-                        <div class="form-group row ">
+                        </div> -->
+                        <!-- <div class="form-group row ">
                             <label for="imagefile" class="col-sm-3 col-form-label">Foto</label>
                             <div class="col-sm-9 kosong ">
                                 <img id="v_image" width="100px" height="100px">
                                 <input type="file" class="form-control btn-file" onchange="loadFile(event)" name="imagefile" id="imagefile" placeholder="Image" value="UPLOAD">
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <!-- <?php echo form_close(); ?> -->
                 </form>

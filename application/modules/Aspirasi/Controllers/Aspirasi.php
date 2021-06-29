@@ -14,6 +14,9 @@ class Aspirasi extends MX_Controller
 	public function index()
 	{
 
+		$page_data['page_name']='Daftar Aspirasi';
+        $page_data['page_title']='Data Aspirasi';
+        $page_data['page_desc']='Data Aspirasi yang Masuk kedalam sistem';
 
 		// $this->load->view('Kode_otomatis', $data);
 		//	$this->load->view('templates/header');
@@ -24,7 +27,7 @@ class Aspirasi extends MX_Controller
 		modules::load('Beranda');
 		$data = modules::run('Kategori_masukan/getAll');
 
-		$this->load->view('Beranda/template/header');
+		$this->load->view('Beranda/template/header',$page_data);
 		$this->load->view('Beranda/template/hero_section');
 		$this->load->view('Beranda/form/form_aspirasi', $data);
 		$this->load->view('Beranda/template/footer');
@@ -72,16 +75,21 @@ class Aspirasi extends MX_Controller
 	public function showAspirasi($id_masukan)
 	{
 
+
 		$where = array('id_masukan' => $id_masukan);
 		$data['aspirasi'] = $this->Md_aspirasi->getById($where, 'vw_aspirasi')->result();
 
 		// 	$data['kode'] = $this->kode_m->kode();
 		// 	$data['tampil'] = $this->kode_m->tampil();
 
+		$page_data['page_name']='Detail Aspirasi';
+        $page_data['page_title']='Data Aspirasi';
+        $page_data['page_desc']='Data Aspirasi yang Masuk kedalam sistem';
+
 		$data['title'] = 'Detail Aspirasi';
 
 		modules::load('dashboard');
-		$this->load->view('dashboard/template/include_header', $data);
+		$this->load->view('dashboard/template/include_header', $page_data);
 		$this->load->view('dashboard/template/include_navbar');
 		$this->load->view('dashboard/template/include_sidebar');
 		$this->load->view('dashboard/pages/detailAspirasi', $data);

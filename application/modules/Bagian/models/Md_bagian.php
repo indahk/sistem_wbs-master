@@ -31,6 +31,13 @@ class Md_bagian extends MX_Controller
         return $table;
     }
 
+    public function count_all()
+    {
+
+        $this->db->from('tbl_menu');
+        return $this->db->count_all_results();
+    }
+
 
     public function add($data)
     {
@@ -44,12 +51,12 @@ class Md_bagian extends MX_Controller
         return $this->db->get_where($table, $where);
     }
 
-    function update_data($where,$data)
+    function update_data($where, $data)
     {
 
         $this->db->where($where);
 
-        $this->db->update('tb_bagian',$data);
+        $this->db->update('tb_bagian', $data);
     }
 
     function get_bagian($id)

@@ -44,16 +44,43 @@ class Bagian extends MX_Controller
     }
 
 
+    public function ajax_list()
+    {
+        ini_set('memory_limit','512M');
+        set_time_limit(3600);
+        $list = $this->Md_bagian->getAll();
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $bagian) {
+            $no++;
+            $row = array();
+            $row[] = $bagian->id_bagian;
+            $row[] = $bagian->nama_bagian;
+           
+            $data[] = $row;
+        }
+
+        $output = array(
+                        "draw" => $_POST['draw'],
+                        "recordsTotal" => $this->Md_bagian->count_all(),
+                        
+                        "data" => $data,
+                );
+        //output to json format
+        echo json_encode($output);
+    }
+
     public function add()
     {
+        $this->_validate();
         $nama = $this->input->post('nama_bagian');
         $data = array(
             'nama_bagian' => $nama
         );
 
         $this->Md_bagian->add($data);
-        $this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil Ditambahkan!</div>');
-        redirect('Bagian/show');
+        // $this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil Ditambahkan!</div>');
+        redirect('Bagian/');
     }
 
     function update()
@@ -95,6 +122,63 @@ class Bagian extends MX_Controller
 
         
 
-        redirect('Bagian/show');
+        redirect('Bagian/');
+    }
+
+
+    private function _validate()
+    {
+        $data = array();
+        $data['error_string'] = array();
+        $data['inputerror'] = array();
+        $data['status'] = TRUE;
+
+        if ($this->input->post('nama_bagian') == '') {
+            $data['inputerror'][] = 'nama_bagian';
+            $data['error_string'][] = 'Nama bagian tidak boleh kosong';
+            $data['status'] = FALSE;
+        }
+
+        // if ($this->input->post('nama_aplikasi') == '') {
+        //     $data['inputerror'][] = 'nama_aplikasi';
+        //     $data['error_string'][] = 'Nama Aplikasi Tidak boleh kosong';
+        //     $data['status'] = FALSE;
+        // }
+
+        // if ($this->input->post('alamat') == '') {
+        //     $data['inputerror'][] = 'alamat';
+        //     $data['error_string'][] = 'Alamat Tidak boleh kosong';
+        //     $data['status'] = FALSE;
+        // }
+
+        // if ($this->input->post('tlp') == '') {
+        //     $data['inputerror'][] = 'tlp';
+        //     $data['error_string'][] = 'No Telpon Tidak boleh kosong';
+        //     $data['status'] = FALSE;
+        // }
+
+        // if ($this->input->post('title') == '') {
+        //     $data['inputerror'][] = 'title';
+        //     $data['error_string'][] = 'Title Tidak boleh kosong';
+        //     $data['status'] = FALSE;
+        // }
+
+        // if ($this->input->post('copy_right') == '') {
+        //     $data['inputerror'][] = 'copy_right';
+        //     $data['error_string'][] = 'Copy Right tidak boleh kosong';
+        //     $data['status'] = FALSE;
+        // }
+
+        // if ($this->input->post('tahun') == '') {
+        //     $data['inputerror'][] = 'tahun';
+        //     $data['error_string'][] = 'Tahun tidak boleh kosong';
+        //     $data['status'] = FALSE;
+        // }
+
+
+        if ($data['status'] === FALSE) {
+            echo json_encode($data);
+            exit();
+        }
     }
 }

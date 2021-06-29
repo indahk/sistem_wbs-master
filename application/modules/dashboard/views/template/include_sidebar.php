@@ -35,9 +35,9 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-          <li class="nav-header">Dashboard</li>
-            <a href="<?= base_url('Dashboard') ?>" class="nav-link ">
+          <li class="nav-item menu-open ">
+          <li class="nav-header"  >Dashboard</li>
+            <a href="<?= base_url('Dashboard') ?>"  class="<?=$this->activate_menu('Dashboard')?>">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard

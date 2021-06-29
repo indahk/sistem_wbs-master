@@ -8,6 +8,7 @@ class Dashboard extends MX_Controller{
         parent::__construct();
         $this->load->library('session');
         $this->load->library('form_validation');
+        $this->load->helper('MY_helper');
         // $this->load->model('Md_akun');
     }
 
