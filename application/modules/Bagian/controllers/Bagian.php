@@ -16,37 +16,34 @@ class Bagian extends MX_Controller
     {
 
 
-        $page_data['page_name']='Daftar Bagian';
-        $page_data['page_title']='Data Bagian';
-        $page_data['page_desc']='Halaman Daftar Bagian';
+        $page_data['page_name'] = 'Daftar Bagian';
+        $page_data['page_title'] = 'Data Bagian';
+        $page_data['page_desc'] = 'Halaman Daftar Bagian';
 
         modules::load('Dashboard');
-        
+
         $result['data'] = $this->Md_bagian->getAll();
         // $data['title'] = 'Data Bagian';
 
         $this->load->view('dashboard/template/include_headerdata', $page_data);
-		$this->load->view('dashboard/template/include_navbar');
-		$this->load->view('dashboard/template/include_sidebar');
-		$this->load->view('dashboard/pages/daftarBagian',$result);
-		$this->load->view('dashboard/template/include_footerdata');
+        $this->load->view('dashboard/template/include_navbar');
+        $this->load->view('dashboard/template/include_sidebar');
+        $this->load->view('dashboard/pages/daftarBagian', $result);
+        $this->load->view('dashboard/template/include_footerdata');
 
-        
+
 
         // $this->load->view('bagian/test_input');
     }
 
     public function show()
     {
-        
-
-       
     }
 
 
     public function ajax_list()
     {
-        ini_set('memory_limit','512M');
+        ini_set('memory_limit', '512M');
         set_time_limit(3600);
         $list = $this->Md_bagian->getAll();
         $data = array();
@@ -56,18 +53,35 @@ class Bagian extends MX_Controller
             $row = array();
             $row[] = $bagian->id_bagian;
             $row[] = $bagian->nama_bagian;
-           
+
             $data[] = $row;
-        }   
+        }
 
         $output = array(
-                        "draw" => $_POST['draw'],
-                        "recordsTotal" => $this->Md_bagian->count_all(),
-                        "data" => $data,
-                );
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->Md_bagian->count_all(),
+            "data" => $data,
+        );
         //output to json format
         echo json_encode($output);
     }
+
+    public function insert()
+    {
+        $this->_validate();
+        $nama = $this->input->post('nama_bagian');
+        $data = array(
+            'nama_bagian' => $nama
+        );
+
+        $this->Md_bagian->add($data);
+        // $nama_submenu = $this->input->post('nama_submenu');
+        // $get_id = $this->Mod_submenu->get_by_nama($nama_submenu);
+        // $id_level = $this->session->userdata['id_level'];
+        // $levels = $this->Mod_userlevel->getAll()->result();
+        echo json_encode(array("status" => TRUE));
+    }
+
 
     public function add()
     {
@@ -84,22 +98,23 @@ class Bagian extends MX_Controller
     }
 
     function update()
-    { 
+    {
         $id_bagian = $this->input->post('id_bagian');
         $nama = $this->input->post('nama_bagian');
         $data = array(
-                'nama_bagian' => $nama );
+            'nama_bagian' => $nama
+        );
         $where = array('id_bagian' => $id_bagian);
 
-       
-        
+
+
         //
         // 
         // );
 
         // $where = array('id_bagian' => $id);
 
-        $this->Md_bagian->update_data($where,$data);
+        $this->Md_bagian->update_data($where, $data);
 
         redirect('bagian/show');
     }
@@ -120,7 +135,7 @@ class Bagian extends MX_Controller
 
         $this->Md_bagian->delete($where, 'tb_bagian');
 
-        
+
 
         redirect('Bagian/');
     }

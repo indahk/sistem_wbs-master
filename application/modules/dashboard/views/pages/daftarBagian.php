@@ -69,7 +69,8 @@
                                             <td>
                                                 <div class="btn-group btn-group-sm">
                                                     <a href="#" class="btn btn-info" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></a>
-                                                    <a href="<?= base_url('Bagian/delete/' . $bagian->id_bagian); ?>" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                                      <a href="" onclick="delbagian()" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                                   
                                                 </div>
                                             </td>
                                         </tr>
@@ -153,7 +154,7 @@
 
     $(document).ready(function() {
 
-        table = $("#tabeluser").DataTable({
+        table = $("#example1").DataTable({
             "responsive": true,
             "autoWidth": false,
             "language": {
@@ -165,7 +166,7 @@
 
             // Load data for the table's content from an Ajax source
             "ajax": {
-                "url": "<?php echo site_url('user/ajax_list') ?>",
+                "url": "<?php echo site_url('bagian/ajax_list') ?>",
                 "type": "POST"
             },
             //Set column definition initialisation properties.
@@ -218,7 +219,7 @@
         table.ajax.reload(null, false); //reload datatable ajax 
     }
 
-    const Toast = Swal.mixin({
+    const Toast =Toast.mixin({
         toast: true,
         position: 'top-end',
         showConfirmButton: false,
@@ -229,7 +230,7 @@
 
     function riset(id) {
 
-        Swal.fire({
+       Toast.fire({
             title: 'Reset password?',
             text: "Pass Default: password123",
             icon: 'warning',
@@ -248,7 +249,7 @@
                     success: function(respone) {
                         if (respone.status == true) {
                             reload_table();
-                            Swal.fire(
+                           Toast.fire(
                                 'Reset!',
                                 'Your password has been reset.',
                                 'success'
@@ -261,8 +262,8 @@
                         }
                     }
                 });
-            } else if (result.dismiss === Swal.DismissReason.cancel) {
-                Swal(
+            } else if (result.dismiss ===Toast.DismissReason.cancel) {
+               Toast(
                     'Cancelled',
                     'Your imaginary file is safe :)',
                     'error'
@@ -278,7 +279,7 @@
         $('.modal-title').text('View User');
         $("#modal-default").modal('show');
         $.ajax({
-            url: '<?php echo base_url('user/viewuser'); ?>',
+            url: '<?php echo base_url('bagian/show'); ?>',
             type: 'post',
             data: 'table=tbl_user&id=' + id,
             success: function(respon) {
@@ -288,8 +289,8 @@
     }
 
     //delete
-    function deluser(id_bagian) {
-        Swal.fire({
+    function delbagian(id_bagian) {
+       Toast.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
             icon: 'warning',
@@ -300,15 +301,15 @@
         }).then((result) => {
 
             $.ajax({
-                url: "<?php echo site_url('user/delete'); ?>",
+                url: "<?php echo site_url('bagian/delete'); ?>",
                 type: "POST",
-                data: "id=" + id,
+                data: "id_bagian=" + id_bagian,
                 cache: false,
                 dataType: 'json',
                 success: function(respone) {
                     if (respone.status == true) {
                         reload_table();
-                        Swal.fire(
+                       Toast.fire(
                             'Deleted!',
                             'Your file has been deleted.',
                             'success'
@@ -374,57 +375,56 @@
         });
     }
 
-    function save() {
-        $('#btnSave').text('saving...'); //change button text
-        $('#btnSave').attr('disabled', true); //set button disable 
-        var url;
-        
-            url = "<?php echo site_url('Bagian/add') ?>";
-        
-        // var formdata = new FormData($('#form')[0]);
-        $.ajax({
-            url: url,
-            type: "POST",
-            data: formdata,
-            dataType: "JSON",
-            cache: false,
-            contentType: false,
-            processData: false,
-            success: function(data) {
+    function save()
+  {
+    $('#btnSave').text('saving...'); //change button text
+    $('#btnSave').attr('disabled',true); //set button disable 
+    var url;
 
-                if (data.status) //if success close modal and reload ajax table
-                {
-                    $('#modal-form').modal('hide');
-                    reload_table();
-                    modal.fire({
-                        icon: 'success',
-                        title: 'Success!!.'
-                    });
-                } else {
-                    for (var i = 0; i < data.inputerror.length; i++) {
-                        $('[name="' + data.inputerror[i] + '"]').addClass('is-invalid');
-                        $('[name="' + data.inputerror[i] + '"]').closest('.kosong').append('<span></span>');
-                        $('[name="' + data.inputerror[i] + '"]').next().text(data.error_string[i]).addClass('invalid-feedback');
-                    }
-                }
-                $('#btnSave').text('save'); //change button text
-                $('#btnSave').attr('disabled', false); //set button enable 
+ 
+    url = "<?php base_url('bagian/insert')?>";
+   
 
+    // ajax adding data to database
+    $.ajax({
+      url : url,
+      type: "POST",
+      data: $('#form_bagian').serialize(),
+      dataType: "JSON",
+      success: function(data)
+      {
 
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                alert(textStatus);
-                // alert('Error adding / update data');
-                modal.fire({
-                    icon: 'error',
-                    title: 'Error!!.'
-                });
-                $('#btnSave').text('save'); //change button text
-                $('#btnSave').attr('disabled', false); //set button enable 
-
+            if(data.status) //if success close modal and reload ajax table
+            {
+              $('#modal-form').modal('hide');
+              reload_table();
+              Toast.fire({
+                icon: 'success',
+                title: 'Success!!.'
+              });
             }
+            else
+            {
+              for (var i = 0; i < data.inputerror.length; i++) 
+              {
+                $('[name="'+data.inputerror[i]+'"]').addClass('is-invalid');
+                $('[name="'+data.inputerror[i]+'"]').next().text(data.error_string[i]).addClass('invalid-feedback');
+              }
+            }
+            $('#btnSave').text('save'); //change button text
+            $('#btnSave').attr('disabled',false); //set button enable 
+
+
+          },
+          error: function (jqXHR, textStatus, errorThrown)
+          {
+            alert('Error adding / update data');
+            $('#btnSave').text('save'); //change button text
+            $('#btnSave').attr('disabled',false); //set button enable 
+
+          }
         });
-    }
+  }
 
     var loadFile = function(event) {
         var image = document.getElementById('v_image');
@@ -453,14 +453,14 @@
 
             </div>
             <div class="modal-body form">
-                <form action="#" id="form" class="form-horizontal" enctype="multipart/form-data">
+                <form action="#" id="form_bagian" class="form-horizontal" enctype="multipart/form-data" method="post">
                     <!-- <?php echo form_open_multipart('', array('class' => 'form-horizontal', 'id' => 'form')) ?> -->
                     <input type="hidden" value="" name="id_user" />
                     <div class="card-body">
                         <div class="form-group row ">
                             <label for="username" class="col-sm-3 col-form-label">Nama Bagian</label>
                             <div class="col-sm-9 kosong">
-                                <input type="text" class="form-control" name="username" id="username" placeholder="nama_bagian">
+                                <input type="text" class="form-control" name="nama_bagian" id="nama_bagian" placeholder="nama_bagian">
                             </div>
                         </div>
                         <!-- <div class="form-group row ">
@@ -511,7 +511,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Save</button>
+                <button type="button" id="btnSave1" onclick="save()" class="btn btn-primary">Save</button>
                 <button type="button" class="btn btn-danger" onclick="batal()" data-dismiss="modal">Cancel</button>
             </div>
         </div><!-- /.modal-content -->
@@ -654,7 +654,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Save</button>
+        <button type="button" id="btnSave" onclick="save()" class="btn btn-primary  btnSave">Save</button>
         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
       </div>
     </div><!-- /.modal-content -->
