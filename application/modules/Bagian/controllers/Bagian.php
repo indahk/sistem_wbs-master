@@ -58,12 +58,11 @@ class Bagian extends MX_Controller
             $row[] = $bagian->nama_bagian;
            
             $data[] = $row;
-        }
+        }   
 
         $output = array(
                         "draw" => $_POST['draw'],
                         "recordsTotal" => $this->Md_bagian->count_all(),
-                        
                         "data" => $data,
                 );
         //output to json format
@@ -80,6 +79,7 @@ class Bagian extends MX_Controller
 
         $this->Md_bagian->add($data);
         // $this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil Ditambahkan!</div>');
+        echo json_encode(array("status" => TRUE));
         redirect('Bagian/');
     }
 

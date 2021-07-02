@@ -36,18 +36,17 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open ">
-          <li class="nav-header"  >Dashboard</li>
-            <a href="<?= base_url('Dashboard') ?>"  class="<?=$this->activate_menu('Dashboard')?>">
+            <a href="<?= base_url('Dashboard') ?>" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
                 <!-- <i class="right fas fa-angle-left"></i> -->
               </p>
             </a>
-            
+
           </li>
           <li class="nav-item">
-            <a href="<?= base_url('Aspirasi/show') ?>" class="nav-link">
+            <a href="<?= base_url('Aspirasi/show') ?>" class="nav-link ">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Aspirasi
@@ -60,7 +59,7 @@
               <i class="nav-icon fas fa-columns"></i>
               <p>
                 Saran
-                
+
                 <!-- <span class="badge badge-info right">6</span> -->
               </p>
             </a>
@@ -172,7 +171,7 @@
             <a href="<?= base_url('Bagian/') ?>" class="nav-link">
               <i class="nav-icon fas fa-columns"></i>
               <p>
-                Bagian 
+                Bagian
               </p>
             </a>
           </li>
@@ -213,7 +212,7 @@
                 <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
-           
+
           </li>
           <li class="nav-item">
             <a href="<?= base_url('') ?>#" class="nav-link">

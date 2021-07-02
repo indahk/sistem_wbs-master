@@ -73,7 +73,7 @@
           <li><a href="<?= base_url('PermintaanInformasi')?>">Permohonan Informasi</a></li>
           <li class="drop-down"><a href="">Layanan</a>
             <ul>
-              <li><a href="<?= base_url('auth/Google_login') ?>">Login</a></li>
+              <li><a href="<?= base_url('auth') ?>">Login</a></li>
              <li class="drop-down"><a href="#">Deep Drop Down</a>
                 <ul>
                   <li><a href="#">Deep Drop Down 1</a></li>
@@ -93,7 +93,7 @@
         </ul>
       </nav><!-- .nav-menu -->
 
- <a href="<?= base_url('auth/Auth') ?>" class="get-started-btn scrollto">Login</a> -->
+ <a href="<?= base_url('auth/') ?>" class="get-started-btn scrollto">Login</a> -->
 
     </div>
   </header><!-- End Header -->

@@ -151,10 +151,27 @@
 
             </div>
             <div> </div>
+
+            <div class="col-md-12 ">
+              <div class="info-box bg-info">
+                <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
+
+                <div class="info-box-content">
+
+
+
+
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
             <div class="form-group">
               <label for="inputEstimatedBudget">Bagian</label>
               <input type="number" id="inputEstimatedBudget" class="form-control" value="2300" step="1">
             </div>
+
+
             <div class="form-group">
               <label for="inputSpentBudget">Total amount spent</label>
               <input type="number" id="inputSpentBudget" class="form-control" value="2000" step="1">
@@ -184,96 +201,92 @@
 <!-- /.content-wrapper -->
 
 <script>
-    function add_png() {
-        save_method = 'add';
-        $('#form')[0].reset(); // reset form on modals
-        $('.form-group').removeClass('has-error'); // clear error class
-        $('.help-block').empty(); // clear error string
-        $('#modal_form').modal('show'); // show bootstrap modal
-        $('.modal-title').text('Penggung Jawab'); // Set Title to Bootstrap modal title
-    }
-
-
-
-
+  function add_png() {
+    save_method = 'add';
+    $('#form')[0].reset(); // reset form on modals
+    $('.form-group').removeClass('has-error'); // clear error class
+    $('.help-block').empty(); // clear error string
+    $('#modal_form').modal('show'); // show bootstrap modal
+    $('.modal-title').text('Penggung Jawab'); // Set Title to Bootstrap modal title
+  }
 </script>
 
 
 <!-- Bootstrap modal -->
 <div class="modal fade" id="modal_form" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
+  <div class="modal-dialog">
+    <div class="modal-content">
 
-            <div class="modal-header">
-                <h3 class="modal-title">User Form</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+      <div class="modal-header">
+        <h3 class="modal-title">User Form</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
 
+      </div>
+      <div class="modal-body form">
+        <form action="#" id="form" class="form-horizontal" enctype="multipart/form-data">
+          <!-- <?php echo form_open_multipart('', array('class' => 'form-horizontal', 'id' => 'form')) ?> -->
+          <input type="hidden" value="" name="id_user" />
+          <div class="card-body">
+            <div class="form-group row ">
+              <label for="username" class="col-sm-3 col-form-label">Nama Bagian</label>
+              <div class="col-sm-9 kosong">
+                <input type="text" class="form-control" name="username" id="username" placeholder="nama_bagian" required>
+              </div>
             </div>
-            <div class="modal-body form">
-                <form action="#" id="form" class="form-horizontal" enctype="multipart/form-data">
-                    <!-- <?php echo form_open_multipart('', array('class' => 'form-horizontal', 'id' => 'form')) ?> -->
-                    <input type="hidden" value="" name="id_user" />
-                    <div class="card-body">
-                        <div class="form-group row ">
-                            <label for="username" class="col-sm-3 col-form-label">Nama Bagian</label>
-                            <div class="col-sm-9 kosong">
-                                <input type="text" class="form-control" name="username" id="username" placeholder="nama_bagian">
-                            </div>
-                        </div>
-                        <div class="form-group row ">
-                            <label for="full_name" class="col-sm-3 col-form-label">Full Name</label>
-                            <div class="col-sm-9 kosong">
-                                <input type="text" class="form-control" name="full_name" id="full_name" placeholder="Full Name">
-                            </div>
-                        </div>
-
-                        <div class="form-group row ">
-                            <label for="password" class="col-sm-3 col-form-label">Password</label>
-                            <div class="col-sm-9 kosong">
-                                <input type="password" class="form-control " name="password" id="password" placeholder="Password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row ">
-                            <label for="is_active" class="col-sm-3 col-form-label">Is Active</label>
-                            <div class="col-sm-9 kosong">
-                                <select class="form-control" name="is_active" id="is_active">
-                                    <option value=""></option>
-                                    <option value="Y">Y</option>
-                                    <option value="N">N</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group row ">
-                            <label for="level" class="col-sm-3 col-form-label">Level</label>
-                            <div class="col-sm-9 kosong">
-                                <select class="form-control" name="level" id="level">
-                                    <option value="">Pilih Level</option>
-                                    <?php
-                                    foreach ($user_level as $level) { ?>
-                                        <option value="<?= $level->id_level; ?>"><?= $level->nama_level; ?></option>
-                                    <?php } ?>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group row ">
-                            <label for="imagefile" class="col-sm-3 col-form-label">Foto</label>
-                            <div class="col-sm-9 kosong ">
-                                <img id="v_image" width="100px" height="100px">
-                                <input type="file" class="form-control btn-file" onchange="loadFile(event)" name="imagefile" id="imagefile" placeholder="Image" value="UPLOAD">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <?php echo form_close(); ?> -->
-                </form>
+            <div class="form-group row ">
+              <label for="full_name" class="col-sm-3 col-form-label">Full Name</label>
+              <div class="col-sm-9 kosong">
+                <input type="text" class="form-control" name="full_name" id="full_name" placeholder="Full Name">
+              </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Save</button>
-                <button type="button" class="btn btn-danger" onclick="batal()" data-dismiss="modal">Cancel</button>
+
+            <div class="form-group row ">
+              <label for="password" class="col-sm-3 col-form-label">Password</label>
+              <div class="col-sm-9 kosong">
+                <input type="password" class="form-control " name="password" id="password" placeholder="Password">
+              </div>
             </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
+
+            <div class="form-group row ">
+              <label for="is_active" class="col-sm-3 col-form-label">Is Active</label>
+              <div class="col-sm-9 kosong">
+                <select class="form-control" name="is_active" id="is_active">
+                  <option value=""></option>
+                  <option value="Y">Y</option>
+                  <option value="N">N</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row ">
+              <label for="level" class="col-sm-3 col-form-label">Level</label>
+              <div class="col-sm-9 kosong">
+                <select class="form-control" name="level" id="level">
+                  <option value="">Pilih Level</option>
+                  <?php
+                  foreach ($user_level as $level) { ?>
+                    <option value="<?= $level->id_level; ?>"><?= $level->nama_level; ?></option>
+                  <?php } ?>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row ">
+              <label for="imagefile" class="col-sm-3 col-form-label">Foto</label>
+              <div class="col-sm-9 kosong ">
+                <img id="v_image" width="100px" height="100px">
+                <input type="file" class="form-control btn-file" onchange="loadFile(event)" name="imagefile" id="imagefile" placeholder="Image" value="UPLOAD">
+              </div>
+            </div>
+          </div>
+          <!-- <?php echo form_close(); ?> -->
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-danger" onclick="batal()" data-dismiss="modal">Cancel</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!-- End Bootstrap modal -->

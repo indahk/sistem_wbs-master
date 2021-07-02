@@ -1,21 +1,16 @@
-
-        
-        <div class="limiter">
+<div class="limiter">
         
                   
             <div class="container-login100" style="background-image: url(<?= base_url('assets/colorlibLogin/images/bg_login_pcr2.jpg') ?>);">
               
                 <div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
-                    <form action="Auth/Login" class="login100-form validate-form flex-sb flex-w" method="POST">
+                    <form action="" id="quickForm" class="login100-form validate-form flex-sb flex-w" method="POST"  role="form" id="quickForm" method="post">
                         <span class="login100-form-title p-b-53">
                             Sistem WBS
                             <h2></h2>
                             <img class="kiri" src="<?= base_url('assets/colorlibLogin/images/small_logo_pcr.png') ?>" >
                 
                         </span>
-                       
-
-                      
 
                         <!-- <a href="#" class="btn-google m-b-20">
                             <img src="<?= base_url('assets/colorlibLogin/images/icons/icon-google.png') ?>" alt="GOOGLE">
@@ -46,8 +41,8 @@
                             <span class="focus-input100"></span>
                         </div>
 
-                        <div class="container-login100-form-btn m-t-17">
-                            <button class="login100-form-btn">
+                        <div class="container-login100-form-btn m-t-17" >
+                            <button class="login100-form-btn" id='login'>
                                 Login
                             </button>
                         </div>

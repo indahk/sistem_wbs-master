@@ -36,7 +36,7 @@
 
                                 </div>
                                 <div class="text-right">
-                                    <button type="button" class="btn btn-info" id="  -btn" onclick="add_bagian()">
+                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-form">
                                         <i class="fas fa-plus"></i> Add
                                         <a href="<?= base_url('Bagian/add') ?>"></a>
                                     </button>
@@ -50,7 +50,7 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="example2" class="table table-bordered table-hover">
+                            <table id="example1" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th>ID_Bagian</th>
@@ -69,21 +69,21 @@
                                             <td>
                                                 <div class="btn-group btn-group-sm">
                                                     <a href="#" class="btn btn-info" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></a>
-                                                    <a href="<?= base_url('Bagian/delete/' . $bagian->id_bagian); ?>" class="btn btn-danger" ><i class="fas fa-trash"></i></a>
+                                                    <a href="<?= base_url('Bagian/delete/' . $bagian->id_bagian); ?>" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                                                 </div>
                                             </td>
                                         </tr>
                                     <?php } ?>
 
                                 </tbody>
-                                <tfoot>
+                                <!-- <tfoot>
                                     <tr>
                                         <th>ID_Bagian</th>
                                         <th>Nama Bagian</th>
                                         <th>Created Bagian</th>
                                         <th>Aksi</th>
                                     </tr>
-                                </tfoot>
+                                </tfoot> -->
                             </table>
                         </div>
                         <!-- /.card-body -->
@@ -130,7 +130,7 @@
                             </table>
                         </div>
                         <!- /.card-body -->
-                </div> 
+                </div>
                 <!-- /.card -->
             </div>
             <!-- /.col -->
@@ -332,7 +332,7 @@
         $('#form')[0].reset(); // reset form on modals
         $('.form-group').removeClass('has-error'); // clear error class
         $('.help-block').empty(); // clear error string
-        $('#modal_form').modal('show'); // show bootstrap modal
+        $('#modal-form').modal('show'); // show bootstrap modal
         $('.modal-title').text('Tambah Bagian'); // Set Title to Bootstrap modal title
     }
 
@@ -378,12 +378,10 @@
         $('#btnSave').text('saving...'); //change button text
         $('#btnSave').attr('disabled', true); //set button disable 
         var url;
-        if (save_method == 'add') {
+        
             url = "<?php echo site_url('Bagian/add') ?>";
-        } else {
-            url = "<?php echo site_url('Bagian/add') ?>";
-        }
-        var formdata = new FormData($('#form')[0]);
+        
+        // var formdata = new FormData($('#form')[0]);
         $.ajax({
             url: url,
             type: "POST",
@@ -396,9 +394,9 @@
 
                 if (data.status) //if success close modal and reload ajax table
                 {
-                    $('#modal_form').modal('hide');
+                    $('#modal-form').modal('hide');
                     reload_table();
-                    Toast.fire({
+                    modal.fire({
                         icon: 'success',
                         title: 'Success!!.'
                     });
@@ -417,7 +415,7 @@
             error: function(jqXHR, textStatus, errorThrown) {
                 alert(textStatus);
                 // alert('Error adding / update data');
-                Toast.fire({
+                modal.fire({
                     icon: 'error',
                     title: 'Error!!.'
                 });
@@ -471,7 +469,7 @@
                                 <input type="text" class="form-control" name="full_name" id="full_name" placeholder="Full Name">
                             </div>
                         </div> -->
-<!-- 
+                        <!-- 
                         <div class="form-group row ">
                             <label for="password" class="col-sm-3 col-form-label">Password</label>
                             <div class="col-sm-9 kosong">
@@ -522,10 +520,38 @@
 <!-- End Bootstrap modal -->
 
 
+<!-- Begin Modal Add -->
+<div class="modal fade" id="modal-add">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Tambah Bagian</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="inputAddress">Nama Bagian</label>
+                    <input type="text" class="form-control" name="nama_bagian" id="inputAddress" placeholder="Nama Anda">
+                </div>
+                <!-- <p>One fine body&hellip;</p> -->
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
 
 <!-- Model Edit -->
 <div class="modal fade" id="modal-edit">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Edit Bagian</h4>
@@ -599,3 +625,38 @@
     <!-- /.modal-dialog -->
 </div>
 <!-- /.modal-content -->
+
+
+<!-- Bootstrap modal -->
+<div class="modal fade" id="modal-form" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h3 class="modal-title">Tambah Bagian</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+      </div>
+      <div class="modal-body form">
+        <form action="#" id="form" class="form-horizontal">
+          <input type="hidden" value="" name="id"/> 
+          <div class="card-body">
+            <div class="form-group row ">
+              <label for="nama_bagian" class="col-sm-3 col-form-label">Nama Bagian</label>
+              <div class="col-sm-9 kosong">
+                <input type="text" class="form-control"  name="nama_submenu" id="nama_submenu" placeholder="Nama submenu" >
+                <span class="help-block"></span>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

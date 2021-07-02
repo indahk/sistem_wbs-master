@@ -265,6 +265,11 @@ class MX_Loader extends CI_Loader
 		return $this;
 	}
 
+	/** Funtion Load(Ditambah Manual) **/
+	protected function _ci_object_to_array($object) {
+		return is_object($object) ? get_object_vars($object) : $object;
+	}
+
 	/** Load a module view **/
 	public function view($view, $vars = array(), $return = FALSE)
 	{

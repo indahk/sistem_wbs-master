@@ -7,7 +7,7 @@ class Aspirasi extends MX_Controller
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->helper('url');
+		$this->load->helper('url','my_helper');
 		$this->load->model('Md_aspirasi');
 	}
 
