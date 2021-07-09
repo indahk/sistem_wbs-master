@@ -590,8 +590,8 @@ End Team Section -->
             <form action                        = "forms/contact.php" method="post" role="form" class="php-email-form">
                 <div class                      = "form-group">
                     <label for                  = "inputAddress">Nama Pelapor</label>
-                    <input type                 = "text" class="form-control" id="inputAddress" placeholder="Nama Anda">
-                </div>
+                    <input type                 = "text" class="form-control" id="inputAddress" placeholder="Nama Anda" data-msg="*Nama Pelapor wajib diisi">
+                </div class="validate">
                 <div class                      = "form-row">
                     <div class                  = "form-group col-md-6">
                         <label for              = "inputEmail4">Email</label>
@@ -604,13 +604,13 @@ End Team Section -->
                 </div>
                 <div class                      = "form-group">
                     <label for                  = "inputAddress">Judul Aspirasi</label>
-                    <input type                 = "text" class="form-control" id="inputAddress" placeholder="Judul Aspirasi Anda">
+                    <input type                 = "text" class="form-control" id="inputAddress" placeholder="Judul Aspirasi Anda" data-msg="*Judul Aspirasi Wajib diisi">
                 </div>
     
                 <div class                      = "form-row">
                     <div class                  = "form-group col-md-6">
         <label for                              = "name">Kategori Aspirasi</label>
-              <select name                      = 'kategori'class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+              <select name                      = 'kategori'class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="*Kolom Kategori Aspirasi wajib dipilh">
                   <option value                 = 'islam'>Wisuda</option>
                   <option value                 = 'kristen'>Kemahasiswaan</option>
               </select>
@@ -635,7 +635,7 @@ End Team Section -->
     <div class                                  = "form-row">
       <div class                                = "form-group col-md-6">
           <label for                            = "name">Lampiran</label>
-          <input type                           = "file" class="form-control" name="subject" id="isi_aspirasi" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+          <input type                           = "file" class="form-control" name="subject" id="isi_aspirasi" data-rule="minlen:4"  />
           <div class                            = "validate"></div>
         </div>
     </div>
@@ -651,3 +651,5 @@ End Team Section -->
 </section><!-- End Contact Section -->
 
 </main><!-- End #main -->
+
+

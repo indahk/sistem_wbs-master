@@ -5,9 +5,7 @@
 <!-- jQuery UI 1.11.4 -->
 <script src="<?= base_url('assets/dashboard/plugins/jquery-ui/jquery-ui.min.js') ?>"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button)
-</script>
+
 <!-- Bootstrap 4 -->
 <script src="<?= base_url('assets/dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 <!-- ChartJS -->
@@ -34,6 +32,10 @@
 <script src="<?= base_url('assets/dashboard/dist/js/demo.j') ?>s"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="<?= base_url('assets/dashboard/dist/js/pages/dashboard.js') ?>"></script>
+
+
+<!-- =============================================================== -->
+
 
 </body>
 </html>

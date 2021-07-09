@@ -10,7 +10,7 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="<?= base_url('') ?>#">Home</a></li>
-            <li class="breadcrumb-item active">DataTables</li>
+            <li class="breadcrumb-item active">Aspirasi</li>
           </ol>
         </div>
       </div>
@@ -28,12 +28,12 @@
               <div class="form-group">
                 <label>Date range button:</label>
 
-                <div class="input-group">
+                <!-- <div class="input-group">
                   <button type="button" class="btn btn-default float-right" id="daterange-btn">
                     <i class="far fa-calendar-alt"></i> Date range picker
                     <i class="fas fa-caret-down"></i>
                   </button>
-                </div>
+                </div> -->
               </div>
               <!-- /.form group -->
               <!-- <h3 class="card-title">DataTable with minimal features & hover style</h3> -->
@@ -43,7 +43,7 @@
               <table id="example1" class="table table-bordered table-hover">
                 <thead>
                   <tr>
-                    <th>ID_Aspirasi</th>
+                    <th>No</th>
                     <th>Judul_Aspirasi</th>
                     <th>Isi_Aspirasi</th>
                     <th>Tanggal</th>
@@ -52,9 +52,10 @@
                   </tr>
                 </thead>
                 <tbody>
+                <?php $no = 1 ;?>
                   <?php foreach ($result as $aspirasi) { ?>
                     <tr>
-                      <td><?= $aspirasi->id_masukan ?></td>
+                      <td><?= $no ++ ?></td>
                       <td><?php echo ($aspirasi->judul_masukan) ?></td>
                       <td><?php echo ($aspirasi->isi_masukan) ?></td>
                       <td><?php echo ($aspirasi->created_masukan) ?></td>

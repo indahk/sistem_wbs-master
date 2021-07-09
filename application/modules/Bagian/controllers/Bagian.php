@@ -38,32 +38,14 @@ class Bagian extends MX_Controller
 
     public function show()
     {
+        $data=$this->Md_bagian->getAll();
+        echo json_encode($data);
     }
 
 
     public function ajax_list()
     {
-        ini_set('memory_limit', '512M');
-        set_time_limit(3600);
-        $list = $this->Md_bagian->getAll();
-        $data = array();
-        $no = $_POST['start'];
-        foreach ($list as $bagian) {
-            $no++;
-            $row = array();
-            $row[] = $bagian->id_bagian;
-            $row[] = $bagian->nama_bagian;
-
-            $data[] = $row;
-        }
-
-        $output = array(
-            "draw" => $_POST['draw'],
-            "recordsTotal" => $this->Md_bagian->count_all(),
-            "data" => $data,
-        );
-        //output to json format
-        echo json_encode($output);
+       
     }
 
     public function insert()
@@ -79,7 +61,7 @@ class Bagian extends MX_Controller
         // $get_id = $this->Mod_submenu->get_by_nama($nama_submenu);
         // $id_level = $this->session->userdata['id_level'];
         // $levels = $this->Mod_userlevel->getAll()->result();
-        echo json_encode(array("status" => TRUE));
+        echo json_encode($data);
     }
 
 
@@ -122,9 +104,7 @@ class Bagian extends MX_Controller
     public function edit($id_bagian)
     {
         $where = array('id_bagian' => $id_bagian);
-
         $data['bagian'] = $this->Md_bagian->edit_data($where, 'tb_bagian')->result();
-
         $this->load->view('v_edit', $data);
     }
 
@@ -132,10 +112,7 @@ class Bagian extends MX_Controller
     {
 
         $where = array('id_bagian' => $id_bagian);
-
         $this->Md_bagian->delete($where, 'tb_bagian');
-
-
 
         redirect('Bagian/');
     }

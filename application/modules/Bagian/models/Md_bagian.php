@@ -34,7 +34,7 @@ class Md_bagian extends MX_Controller
     public function count_all()
     {
 
-        $this->db->from('tbl_menu');
+        $this->db->from('tb_bagian');
         return $this->db->count_all_results();
     }
 

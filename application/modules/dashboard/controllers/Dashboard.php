@@ -21,28 +21,25 @@ class Dashboard extends MX_Controller
 
     public function index()
     {
-        $page_data['page_name'] = 'pengguna';
-        $page_data['page_title'] = '';
-        $page_data['page_desc'] = '';
+        // $page_data['page_name'] = 'pengguna';
+        // $page_data['page_title'] = '';
+        // $page_data['page_desc'] = '';
 
-        $jml_aspirasi = $this->db->query("SELECT * FROM vw_aspirasi");
-        $jml_saran = $this->db->query("SELECT * FROM vw_saran");
-        $jml_lapor = $this->db->query("SELECT * FROM vw_lapor");
-        $jml_permohonan = $this->db->query("SELECT * FROM vw_permintaan");
+        // $jml_aspirasi = $this->db->query("SELECT * FROM vw_aspirasi");
+        // $jml_saran = $this->db->query("SELECT * FROM vw_saran");
+        // $jml_lapor = $this->db->query("SELECT * FROM vw_lapor");
+        // $jml_permohonan = $this->db->query("SELECT * FROM vw_permintaan");
 
-        $data['jml_aspirasi'] = $jml_aspirasi->num_rows();
-        $data['jml_saran'] = $jml_saran->num_rows();
-        $data['jml_lapor'] = $jml_lapor->num_rows();
-        $data['jml_permohonan'] = $jml_permohonan->num_rows();
-        $data['title'] = 'Dasboard';
+        // $data['jml_aspirasi'] = $jml_aspirasi->num_rows();
+        // $data['jml_saran'] = $jml_saran->num_rows();
+        // $data['jml_lapor'] = $jml_lapor->num_rows();
+        // $data['jml_permohonan'] = $jml_permohonan->num_rows();
+        // $data['title'] = 'Dasboard';
 
-
-
-        $this->load->view('dashboard/template/include_header', $data);
-        $this->load->view('dashboard/template/include_navbar');
-        $this->load->view('dashboard/template/include_sidebar');
-        $this->load->view('dashboard/pages/dashboard', $data);
-        $this->load->view('dashboard/template/include_footer');
+       
+        $this->load->view('dashboard/index');
+        $this->load->view('dashboard/pages/dashboard');
+        
     }
 
     public function getAspirasi()

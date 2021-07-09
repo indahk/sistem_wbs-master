@@ -93,7 +93,8 @@
         </ul>
       </nav><!-- .nav-menu -->
 
- <a href="<?= base_url('auth/') ?>" class="get-started-btn scrollto">Login</a> -->
+ <a href="<?= base_url('auth/') ?>" class="get-started-btn scrollto">Login</a> 
 
     </div>
   </header><!-- End Header -->
+

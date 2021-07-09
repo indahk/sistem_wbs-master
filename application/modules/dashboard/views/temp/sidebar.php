@@ -1,9 +1,8 @@
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?= base_url('') ?>index3.html" class="brand-link">
-      <img src="<?= base_url('assets/dashboard/dist/img/AdminLTELogo.png') ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">WBS sistem</span>
+      <img src="<?= base_url('') ?>assets/dashboard/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>
 
     <!-- Sidebar -->
@@ -11,14 +10,14 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="<?= base_url('assets/img/team/team-2.jpg') ?>" class="img-circle elevation-2" alt="User Image">
+          <img src="<?= base_url('') ?>assets/dashboard/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="<?= base_url('') ?>#" class="d-block">Admin</a>
+          <a href="<?= base_url('') ?>#" class="d-block">Alexander Pierce</a>
         </div>
       </div>
 
-      <!-- SidebarSearch Form
+      <!-- SidebarSearch Form -->
       <div class="form-inline">
         <div class="input-group" data-widget="sidebar-search">
           <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
@@ -28,64 +27,206 @@
             </button>
           </div>
         </div>
-      </div> -->
+      </div>
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open ">
-            <a href="<?= base_url('Dashboard') ?>" class="nav-link ">
+          <li class="nav-item menu-open">
+            <a href="<?= base_url('') ?>#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
-                <!-- <i class="right fas fa-angle-left"></i> -->
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>./index.html" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard v1</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard v2</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>./index3.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard v3</p>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
-            <a href="<?= base_url('Aspirasi/show') ?>" class="nav-link active">
-              <i class="nav-icon fas fa-book"></i>
+            <a href="<?= base_url('') ?>pages/widgets.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
               <p>
-                Aspirasi
-                <!-- <span class="right badge badge-danger">New</span> -->
+                Widgets
+                <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?= base_url('Dashboard/dataSaran') ?>" class="nav-link">
-              <i class="nav-icon fas fa-columns"></i>
+            <a href="<?= base_url('') ?>#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
               <p>
-                Saran
-
-                <!-- <span class="badge badge-info right">6</span> -->
+                Layout Options
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">6</span>
               </p>
             </a>
-
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/layout/top-nav.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Top Navigation</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/layout/top-nav-sidebar.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Top Navigation + Sidebar</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/layout/boxed.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Boxed</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/layout/fixed-sidebar.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Fixed Sidebar</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/layout/fixed-sidebar-custom.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Fixed Sidebar <small>+ Custom Area</small></p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/layout/fixed-topnav.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Fixed Navbar</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/layout/fixed-footer.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Fixed Footer</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/layout/collapsed-sidebar.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Collapsed Sidebar</p>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
-            <a href="<?= base_url('Lapor/show') ?>" class="nav-link">
-              <i class="nav-icon far fa-envelope"></i>
+            <a href="<?= base_url('') ?>#" class="nav-link">
+              <i class="nav-icon fas fa-chart-pie"></i>
               <p>
-                Pelaporan Pelanggaran
-                <!-- <i class="right fas fa-angle-left"></i> -->
+                Charts
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/charts/chartjs.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>ChartJS</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/charts/flot.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Flot</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/charts/inline.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Inline</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/charts/uplot.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>uPlot</p>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
-            <a href="<?= base_url('Pelaporan/show') ?>" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
+            <a href="<?= base_url('') ?>#" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
               <p>
-                Permintaan Informasi
-                <!-- <i class="fas fa-angle-left right"></i> -->
+                UI Elements
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
-
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/UI/general.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>General</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/UI/icons.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Icons</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/UI/buttons.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Buttons</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/UI/sliders.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Sliders</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/UI/modals.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Modals & Alerts</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/UI/navbar.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Navbar & Tabs</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/UI/timeline.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Timeline</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/UI/ribbons.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ribbons</p>
+                </a>
+              </li>
+            </ul>
           </li>
-          <!-- <li class="nav-item">
+          <li class="nav-item">
             <a href="<?= base_url('') ?>#" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p>
@@ -119,16 +260,16 @@
                 </a>
               </li>
             </ul>
-          </li> -->
+          </li>
           <li class="nav-item">
-            <a href="<?= base_url('Pelapor/show') ?>#" class="nav-link">
+            <a href="<?= base_url('') ?>#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Pelapor
-                <!-- <i class="fas fa-angle-left right"></i> -->
+                Tables
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
-            <!-- <ul class="nav nav-treeview">
+            <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="<?= base_url('') ?>pages/tables/simple.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -147,10 +288,10 @@
                   <p>jsGrid</p>
                 </a>
               </li>
-            </ul> -->
+            </ul>
           </li>
-          <li class="nav-header">Manage Data</li>
-          <!-- <li class="nav-item">
+          <li class="nav-header">EXAMPLES</li>
+          <li class="nav-item">
             <a href="<?= base_url('') ?>pages/calendar.html" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
@@ -166,28 +307,28 @@
                 Gallery
               </p>
             </a>
-          </li> -->
+          </li>
           <li class="nav-item">
-            <a href="<?= base_url('Bagian/') ?>" class="nav-link">
+            <a href="<?= base_url('') ?>pages/kanban.html" class="nav-link">
               <i class="nav-icon fas fa-columns"></i>
               <p>
-                Bagian
+                Kanban Board
               </p>
             </a>
           </li>
           <li class="nav-item">
             <a href="<?= base_url('') ?>#" class="nav-link">
-              <i class="nav-icon far fa-user"></i>
+              <i class="nav-icon far fa-envelope"></i>
               <p>
-                User
-                <!-- <i class="fas fa-angle-left right"></i> -->
+                Mailbox
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
-            <!-- <ul class="nav nav-treeview">
+            <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?= base_url('User/show') ?>l" class="nav-link">
+                <a href="<?= base_url('') ?>pages/mailbox/mailbox.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Daftar User</p>
+                  <p>Inbox</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -202,17 +343,78 @@
                   <p>Read</p>
                 </a>
               </li>
-            </ul> -->
+            </ul>
           </li>
           <li class="nav-item">
-            <a href="<?= base_url('Log/index') ?>#" class="nav-link">
-              <i class="nav-icon far fa-address-book"></i>
+            <a href="<?= base_url('') ?>#" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
               <p>
-                Log Sistem
-                <!-- <i class="fas fa-angle-left right"></i> -->
+                Pages
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
-
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/examples/invoice.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Invoice</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/examples/profile.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Profile</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/examples/e-commerce.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>E-commerce</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/examples/projects.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Projects</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/examples/project-add.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Project Add</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/examples/project-edit.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Project Edit</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/examples/project-detail.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Project Detail</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/examples/contacts.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Contacts</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/examples/faq.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>FAQ</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('') ?>pages/examples/contact-us.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Contact us</p>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
             <a href="<?= base_url('') ?>#" class="nav-link">

@@ -20,10 +20,11 @@ class Beranda extends MX_Controller{
 	//	$this->load->view('pages/aspirasi');
 	//	$this->load->view('templates/footer');
 	//  echo 'Hai ini adalah halaman aspirasi';
-	$this->load->view('template/header');
-	$this->load->view('hero_section');
-	$this->load->view('page/beranda');
-	$this->load->view('template/footer');
+	// $this->load->view('template/header');
+	// $this->load->view('hero_section');
+	// $this->load->view('page/beranda');
+	// $this->load->view('template/footer');
+	$this->load->view('Beranda/index');
 
         
 	}

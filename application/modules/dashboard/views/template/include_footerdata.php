@@ -45,17 +45,17 @@
   <script src="<?= base_url('assets/dashboard/dist/js/demo.js') ?>"></script>
 
   <!-- jQuery -->
-<script src="assets/dashboard/plugins/jquery/jquery.min.js"></script>
+<!-- <script src="<?= base_url('assets/dashboard/plugins/jquery/jquery.min.js') ?>"></script> -->
 <!-- Bootstrap 4 -->
-<script src="assets/dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?= base_url('assets/dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 <!-- SweetAlert2 -->
-<script src="assets/dashboard/plugins/sweetalert2/sweetalert2.min.js"></script>
+<script src="<?= base_url('assets/dashboard/plugins/sweetalert2/sweetalert2.min.js') ?>"></script>
 <!-- Toastr -->
-<script src="assets/dashboard/plugins/toastr/toastr.min.js"></script>
+<script src="<?= base_url('assets/dashboard/plugins/toastr/toastr.min.js') ?>"></script>
 <!-- AdminLTE App -->
-<script src="assets/dashboard/dist/js/adminlte.min.js"></script>
+<script src="<?= base_url('assets/dashboard/dist/js/adminlte.min.js') ?>"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="assets/dashboard/dist/js/demo.js"></script>
+<script src="<?= base_url('assets/dashboard/dist/js/demo.js') ?>"></script>
 <!-- Page specific script -->
 
 <!-- Page specific script -->

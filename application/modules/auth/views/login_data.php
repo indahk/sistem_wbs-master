@@ -8,23 +8,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/plugins/fontawesome-5.5.0/css/all.min.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/dashboard/plugins/fontawesome-5.5.0/css/all.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/plugins/fontawesome-4.3.0/css/all.min.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/dashboard/plugins/fontawesome-4.3.0/css/all.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/dashboard/dist/css/adminlte.min.css">
     <!-- Body style -->
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/dist/css/stylearyo.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/dashboard/dist/css/stylearyo.css">
   <!-- iCheck -->
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/plugins/iCheck/square/blue.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/dashboard/plugins/iCheck/square/blue.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
       <!-- SweetAlert2 -->
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/dashboard/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
   <!-- Toastr -->
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/plugins/toastr/toastr.min.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/dashboard/plugins/toastr/toastr.min.css">
 </head>
 <body class="hold-transition login-page" id="gradien1">
 
@@ -97,21 +97,21 @@
 <!-- /.login-box -->
 
 <!-- jQuery -->
-<script src="<?php echo base_url();?>assets/plugins/jquery/jquery.min.js"></script>
+<script src="<?php echo base_url();?>assets/dashboard/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="<?php echo base_url();?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo base_url();?>assets/dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- jquery-validation -->
-<script src="<?php echo base_url();?>assets/plugins/jquery-validation/jquery.validate.min.js"></script>
-<script src="<?php echo base_url();?>assets/plugins/jquery-validation/additional-methods.min.js"></script>
+<script src="<?php echo base_url();?>assets/dashboard/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="<?php echo base_url();?>assets/dashboard/plugins/jquery-validation/additional-methods.min.js"></script>
 <!-- AdminLTE App -->
-<script src="<?php echo base_url();?>assets/dist/js/adminlte.min.js"></script>
+<script src="<?php echo base_url();?>assets/dashboard/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="<?php echo base_url();?>assets/dist/js/demo.js"></script>
+<script src="<?php echo base_url();?>assets/dashboard/dist/js/demo.js"></script>
 <!-- SweetAlert2 -->
-<script src="<?php echo base_url();?>assets/plugins/sweetalert2/sweetalert2.min.js"></script>
+<script src="<?php echo base_url();?>assets/dashboard/plugins/sweetalert2/sweetalert2.min.js"></script>
 <!-- Toastr -->
-<script src="<?php echo base_url();?>assets/plugins/toastr/toastr.min.js"></script>  
+<script src="<?php echo base_url();?>assets/dashboard/plugins/toastr/toastr.min.js"></script>  
 
 
 <script>
