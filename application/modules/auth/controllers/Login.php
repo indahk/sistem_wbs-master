@@ -13,14 +13,15 @@ class Login extends MX_Controller {
 
     public function index()
     {
-        modules::load('beranda');
+        modules::load('Auth');
+        modules::load('Dashboard');
 
         $logged_in = $this->session->userdata('logged_in');
         if ($logged_in==TRUE) {
-            redirect('Dashboard/dashboard');
+            redirect('Auth/login');
         }else{
             // $aplikasi['aplikasi'] = $this->Mod_login->Aplikasi()->row();
-            $this->load->view('login');
+            $this->load->view('Dashboard/dashboard');
         }
     }//end function index
 

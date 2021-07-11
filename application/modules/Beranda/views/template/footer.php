@@ -26,7 +26,7 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3 ><img src="<?= base_url('assets/img/logo/logo_pcr.png') ?>" height="50" width="130"></h3>
+            <h3 ><img src="<?= base_url('assets/beranda/img/logo/logo_pcr.png') ?>" height="50" width="130"></h3>
             <p>
               Jl. Umban Sari (Patin) No. 1 Rumbai<br>
               Pekanbaru-Riau 28265 <br>
@@ -92,18 +92,18 @@
   <div id="preloader"></div> 
 
   <!-- Vendor JS Files -->
-  <script src="<?= base_url('assets/vendor/jquery/jquery.min.js') ?>"></script>
-  <script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
-  <script src="<?= base_url('assets/vendor/jquery.easing/jquery.easing.min.js') ?>"></script>
-  <script src="<?= base_url('assets/vendor/php-email-form/validate.js') ?>"></script>
-  <script src="<?= base_url('assets/vendor/waypoints/jquery.waypoints.min.js') ?>"></script>
-  <script src="<?= base_url('assets/vendor/isotope-layout/isotope.pkgd.min.js') ?>"></script>
-  <script src="<?= base_url('assets/vendor/venobox/venobox.min.js') ?>"></script>
-  <script src="<?= base_url('assets/vendor/owl.carousel/owl.carousel.min.js') ?>"></script>
-  <script src="<?= base_url('assets/vendor/aos/aos.js') ?>assets/vendor/aos/aos.js"></script>
+  <script src="<?= base_url('assets/beranda/vendor/jquery/jquery.min.js') ?>"></script>
+  <script src="<?= base_url('assets/beranda/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+  <script src="<?= base_url('assets/beranda/vendor/jquery.easing/jquery.easing.min.js') ?>"></script>
+  <script src="<?= base_url('assets/beranda/vendor/php-email-form/validate.js') ?>"></script>
+  <script src="<?= base_url('assets/beranda/vendor/waypoints/jquery.waypoints.min.js') ?>"></script>
+  <script src="<?= base_url('assets/beranda/vendor/isotope-layout/isotope.pkgd.min.js') ?>"></script>
+  <script src="<?= base_url('assets/beranda/vendor/venobox/venobox.min.js') ?>"></script>
+  <script src="<?= base_url('assets/beranda/vendor/owl.carousel/owl.carousel.min.js') ?>"></script>
+  <script src="<?= base_url('assets/beranda/vendor/aos/aos.js') ?>assets/vendor/aos/aos.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="<?= base_url('assets/js/main.js')?>"></script>
+  <script src="<?= base_url('assets/beranda/js/main.js')?>"></script>
   <!-- dropzonejs -->
 <script src="assets/dashboard/plugins/dropzone/min/dropzone.min.js"></script>
 

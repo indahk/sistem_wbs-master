@@ -28,15 +28,8 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/colorlibLogin/css/main.css') ?>">
     <!--===============================================================================================-->
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="<?= base_url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback')?>">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="<?= base_url('asset/dashboard/plugins/fontawesome-free/css/all.min.css')?>">
-    <!-- SweetAlert2 -->
-    <link rel="stylesheet" href="<?= base_url('asset/dashboard/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')?>">
-    <!-- Toastr -->
-    <link rel="stylesheet" href="<?= base_url('asset/dashboard/plugins/toastr/toastr.min.css')?>">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="<?= base_url('asset/dashboard/dist/css/adminlte.min.css')?>">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
     <!--===============================================================================================-->
 
 <body>
@@ -53,12 +46,6 @@
                         <img class="kiri" src="<?= base_url('assets/colorlibLogin/images/small_logo_pcr.png') ?>">
 
                     </span>
-
-                    <!-- <a href="#" class="btn-google m-b-20">
-                            <img src="<?= base_url('assets/colorlibLogin/images/icons/icon-google.png') ?>" alt="GOOGLE">
-                            Google
-                        </a> -->
-
                     <div class="p-t-31 p-b-9">
                         <span class="txt1">
                             Username
@@ -74,9 +61,7 @@
                             Password
                         </span>
 
-                        <!-- <a href="#" class="txt2 bo1 m-l-5">
-                                Forgot?
-                            </a> -->
+                      
                     </div>
                     <div class="wrap-input100 validate-input" data-validate="Password is required">
                         <input class="input100" type="password" name="password">
@@ -89,22 +74,7 @@
                         </button>
                     </div>
 
-                    <!-- <div class="login100-form-btn  m-t-17 m-b-50">
-                        <a href="<?= base_url('auth/Google_login') ?>">
-                            <img src="<?= base_url('assets/img/icon-google.png') ?>" alt="GOOGLE">
-                        </a>
-                        Google
-                    </div> -->
-                    <!-- 
-                        <div class="w-full text-center p-t-55">
-                            <span class="txt2">
-                                Not a member?
-                            </span>
-
-                            <a href="#" class="txt2 bo1">
-                                Sign up now
-                            </a>
-                        </div> -->
+                   
                 </form>
             </div>
         </div>
@@ -119,7 +89,7 @@
     <!--===============================================================================================-->
     <script src="<?= base_url('assets/colorlibLogin/vendor/animsition/js/animsition.min.js') ?>"></script>
     <!--===============================================================================================-->
-    <script src="<?= base_url('assets/colorlibLogin/vendor/bootstrap/js/popper.js') ?>X"></script>
+    <script src="<?= base_url('assets/colorlibLogin/vendor/bootstrap/js/popper.js') ?>"></script>
     <script src="<?= base_url('assets/colorlibLogin/vendor/bootstrap/js/bootstrap.min.js') ?>"></script>
     <!--===============================================================================================-->
     <script src="<?= base_url('assets/colorlibLogin/vendor/select2/select2.min.js') ?>"></script>
@@ -135,52 +105,36 @@
 
 </body>
 
+
+
 <script>
-    $(function() {
-        var Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000
-        });
-
-        $('.toastrDefaultError').click(function() {
-            toastr.error('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
-        });
-
-        $('.toastrDefaultSuccess').click(function() {
-            toastr.success('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
-        });
-
-
-        $(".login").click(function() {
-            $.ajax({
-                url: '<?php echo base_url('auth/login') ?>',
-                type: 'POST',
-                data: $('#quickForm').serialize(),
-                dataType: 'JSON',
-                success: function(data) {
-                    if (data.status) {
-                        toastr.success('Login Berhasil!');
-                        var url = '<?php echo base_url('dashboard') ?>';
-                        window.location = url;
-                    } else if (data.error) {
-                        toastr.error(
-                            data.pesan
-                        );
-                    } else {
-                        for (var i = 0; i < data.inputerror.length; i++) {
-                            $('[name="' + data.inputerror[i] + '"]').addClass('is-invalid');
-                            $('[name="' + data.inputerror[i] + '"]').closest('.kosong').append('<span></span>');
-                            $('[name="' + data.inputerror[i] + '"]').next().next().text(data.error_string[i]).addClass('invalid-feedback');
-                        }
-                    }
+  $("#login").on('click',function() {
+      $.ajax({
+        url : '<?php echo base_url('login/login') ?>',
+        type : 'POST',
+        data : $('#quickForm').serialize(),
+        dataType : 'JSON',
+        success : function(data) {
+          if (data.status) {
+            toastr.success('Login Berhasil!');
+            var url = '<?php echo base_url('dashboard') ?>';
+            window.location = url;
+          }else if (data.error) {
+            toastr.error(
+              data.pesan
+            );
+          }else{
+                for (var i = 0; i < data.inputerror.length; i++) 
+                {
+                    $('[name="'+data.inputerror[i]+'"]').addClass('is-invalid');
+                    $('[name="'+data.inputerror[i]+'"]').closest('.kosong').append('<span></span>');
+                    $('[name="'+data.inputerror[i]+'"]').next().next().text(data.error_string[i]).addClass('invalid-feedback');
                 }
-            });
+          }
+        }
+      });
+      
+  });
 
-        });
-
-    });
 </script>
-
 </html>

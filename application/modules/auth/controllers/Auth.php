@@ -9,6 +9,7 @@ class Auth extends MX_Controller
         parent::__construct();
         $this->load->model('Md_auth');
         $this->load->helper('my_helper');
+        $this->load->library('session');
         
     }
 
@@ -16,15 +17,17 @@ class Auth extends MX_Controller
     {   
         modules::run('Dashboard');
 
+        parent::__construct();
+        $this->load->model(array('Mod_login'));
+        
         $logged_in = $this->session->userdata('logged_in');
         if ($logged_in==TRUE) {
-            redirect('Dashboard');
+            redirect('dashboard');
         }else{
-            // $aplikasi['aplikasi'] = $this->Md_auth->Aplikasi()->row();
-            // $this->load->view('template/include_headerlogin');
-            $this->load->view('auth/login');
-            // $this->load->view('template/include_footerlogin');
+            // $aplikasi['aplikasi'] = $this->Mod_login->Aplikasi()->row();
+            $this->load->view('dashboard/data_aspirasi');
         }
+    }//end function index
     }//end function index
 
     function login()

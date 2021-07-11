@@ -1,12 +1,8 @@
 <!-- ======= Contact Section ======= -->
-<section id                     = "contact" class="contact">
+<section id                     = "aspirasi" class="contact">
   <div class                    = "container" data-aos="fade-up">
-          c
     <div class                  = "section-title">
       <h2>Aspirasi</h2>
-
-
-
       <p>Form Aspirasi</p>
     </div>
 
@@ -26,13 +22,13 @@
             <input type         = "text" class="form-control" name="nohp_pelapor"  placeholder="No.tlpn">
           </div>
         </div> 
-        <!-- <div class              = "form-group">
+        <div class              = "form-group">
           <label for            = "inputAddress">Judul Aspirasi</label>
           <input type           = "text" class="form-control" name="judul_aspirasi" id="inputAddress" placeholder="Judul Aspirasi Anda">
-        </div>  -->
+        </div> 
  
         <div class              = "form-row">
-          <!-- <div class            = "form-group col-md-6">
+          <div class            = "form-group col-md-6">
             <label for          = "name">Kategori Aspirasi</label>
 
             <select name        = 'kat_masukan' class="form-control" name="kat_aspirasi" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
@@ -41,7 +37,7 @@
               <?php } ?>
             </select>
 
-          </div>  -->
+          </div> 
            <div class            = "form-group col-md-6">
             <label for          = "name">Kategori Pelapor</label>
             <select name        = 'ktg_pelapor' class="form-control" name="ktg_pelapor" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
@@ -57,19 +53,19 @@
 
         </div>
  
-        <!-- <div class              = "form-group">
+        <div class              = "form-group">
           <label for            = "name">Isi Aspirasi</label>
           <textarea class       = "form-control" name="isi_aspirasi" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
           <div class            = "validate"></div>
-        </div> -->
+        </div>
 
-        <!-- <div class              = "form-row">
+        <div class              = "form-row">
           <div class            = "form-group col-md-6">
             <label for          = "name">Lampiran</label>
             <input type         = "file" class="form-control" name="lampiran" id="isi_aspirasi" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
             <div class          = "validate"></div>
           </div>
-        </div>  -->
+        </div> 
         <button type = "submit" class="btn btn-primary">Kirim</button>
 
 
